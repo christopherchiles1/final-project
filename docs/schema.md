@@ -59,3 +59,19 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+
+---
+
+## groups
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+title           | string    | not null
+description     | string    | not null
+
+## memberships
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, foreign key (references users), indexed, unique [group_id]
+group_id        | integer   | not null, foreign key (references groups), indexed
