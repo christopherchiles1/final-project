@@ -37,12 +37,12 @@ Bonus features allow users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Projects Model and JSON API (1.5 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+During Phase 1, I will implement user signup, login, and logout with associated
+authentication (using BCrypt). I will have a user dashboard page after signup
+which will hold the root React component. I will set up a full JSON API for
+projects, and a users projects will be listed on the dashboard.
 
 [Details][phase-one]
 
