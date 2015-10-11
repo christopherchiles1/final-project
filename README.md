@@ -1,24 +1,32 @@
-# FresherNote
+# Integral Tracker
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Integral Tracker][heroku]
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+Integral Tracker is a life-management web application inspired by Pivotal Tracker and built using Ruby on Rails and React.js.
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+Integral Tracker allows users to:
 
 - [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] Log in and out
+- [ ] Create, view, edit, and delete projects
+- [ ] Create, view, edit, and delete tasks
+- [ ] Create, view, edit, and delete todos
+- [ ] Create, view, edit, and delete tags
+- [ ] View a dashboard of all projects
+- [ ] Manage a project using the project's workspace
+- [ ] Search for projects and tasks
+- [ ] Drag and drop workspace elements to different places
+
+Bonus features allow users to:
+
+- [ ] Create, read, edit, and delete groups for cooperative projects
+- [ ] Use keyboard shortcuts to manage their projects quickly
+- [ ] Create, view, edit, and delete task-groups (using tags)
+- [ ] View interactive charts of project progress
 
 ## Design Docs
 * [View Wireframes][view]
@@ -64,7 +72,7 @@ extend this to a fuzzy search through every Note's content.
 
 ### Phase 4: Allow Complex Styling in Notes (1 day)
 
-Using quill.js, allow for complex styling of notes. 
+Using quill.js, allow for complex styling of notes.
 
 [Details][phase-four]
 
