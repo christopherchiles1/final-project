@@ -10,7 +10,7 @@
 ![workspace]
 
 ## Component Heirarchy
-![component-heirarchy]
+[component-heirarchy]
 
 [signin]: ./wireframes/signin.png
 [dashboard]: ./wireframes/dashboard.png
