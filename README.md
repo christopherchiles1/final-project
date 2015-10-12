@@ -1,14 +1,14 @@
-# Integral Tracker
+# Life Tracker
 
-[Integral Tracker][heroku]
+[Life Tracker][heroku]
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-Integral Tracker is a life-management web application inspired by Pivotal Tracker and built using Ruby on Rails and React.js.
+Life Tracker is a life-management web application inspired by Pivotal Tracker and built using Ruby on Rails and React.js.
 
-Integral Tracker allows users to:
+Life Tracker allows users to:
 
 - [ ] Create an account
 - [ ] Log in and out
