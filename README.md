@@ -6,7 +6,8 @@
 
 ## Minimum Viable Product
 
-Life Tracker is a life-management web application inspired by Pivotal Tracker and built using Ruby on Rails and React.js.
+Life Tracker is a life-management web application inspired by Pivotal Tracker
+and built using Ruby on Rails and React.js.
 
 Life Tracker allows users to:
 

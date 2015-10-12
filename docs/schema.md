@@ -4,9 +4,9 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 description | text      | not null
-user_id     | integer   | not null, foreign key (references users), indexed
 
 ## tasks
 column name | data type | details

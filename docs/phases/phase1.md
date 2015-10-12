@@ -9,12 +9,14 @@
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
 * Api::ProjectsController (create, destroy, index, show, update)
+* StaticPagesController (root)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
 * projects/index.json.jbuilder
 * projects/show.json.jbuilder
+* static_pages/root.html.erb
 
 ## Flux
 ### Views (React Components)
