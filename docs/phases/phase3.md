@@ -14,10 +14,10 @@
 ## Flux
 ### Views (React Components)
 * Workspace
-* ProjectHeader
+* SearchForm
 * ProjectSidebar
-* TasksForm
 * TasksIndex
+  * TasksForm
   * TasksIndexItem
 * SearchIndex
 

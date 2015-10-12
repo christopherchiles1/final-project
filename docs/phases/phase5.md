@@ -13,7 +13,7 @@
 
 ## Flux
 ### Views (React Components)
-  * SearchIndex
+* TagsIndex
 
 ### Stores
 

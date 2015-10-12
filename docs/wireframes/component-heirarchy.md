@@ -1,11 +1,10 @@
 ## React Components
 * App
-  * AppHeader
   * Dashboard
-    * ProjectsForm
     * ProjectsIndex
+      * ProjectsForm
+      * ProjectsIndexItem
   * Workspace
-    * ProjectHeader
     * ProjectSidebar
     * TasksIndex
       * TasksForm
@@ -13,4 +12,3 @@
         * TodosIndex
           * TodosForm
           * TodosIndexItem
-  * AppFooter

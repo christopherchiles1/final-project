@@ -9,8 +9,6 @@
 
 ## Flux
 ### Views (React Components)
-* AppHeader
-* AppFooter
 * Dashboard
   * ProjectsIndex
     * ProjectsForm
@@ -27,7 +25,7 @@
 ### ApiUtil
 * ApiUtil.fetchAllProjects
 * ApiUtil.fetchSingleProject
-* ApiUtil.creatProject
+* ApiUtil.createProject
 * ApiUtil.editProject
 * ApiUtil.destroyProject
 

@@ -39,27 +39,33 @@ projects, and a users projects will be listed on the dashboard.
 
 ### Phase 2: Flux Architecture and Project CRUD (2.5 days)
 
-Phase 2 is focused on setting up Flux, the React Router, and the React view
-structure for the main application. After the basic Flux architecture has been
-set up, a Project store will be implemented and a set of actions corresponding to the needed CRUD functionality created. Once this is done, I will create React
-views for the Projects `Index`, `IndexItem` and `Form`. I will also create React views for the navbar and footer of the website. At the end of Phase 2,
-Projects can be created, read, edited and destroyed from the project dashboard.
+Phase 2 is focused on setting up Flux and React routing for the static page.
+I will start by developing the Flux architecture for Projects, including the
+Flux Dispatcher and Project Actions, Constants, ApiUtil methods, and Store. Then
+I will create React views for the ProjectsIndex, ProjectsIndexItem, and
+ProjectsForm. At the end of Phase 2, Projects can be created, viewed, edited and
+destroyed from the Dashboard.
 
 [Details][phase-two]
 
 ### Phase 3: The Project Workspace and Tasks (1.5 days)
 
-Phase 3 focuses on developing the project workspace. I will implement Tasks which can be added to a Project and given a planned, started, and completed status. I will implement React views for Tasks so that they can be created and manipulated from a projects workspace.
+Phase 3 focuses on developing the project workspace. I will implement Tasks
+which can be added to a Project and given a planned, started, and completed
+status. I will implement React views for Tasks so that they can be created and
+manipulated from a projects workspace. I will also add a Sidebar which will
+switch out the panes displayed. Finally, I will add a SearchForm and SearchIndex
+component for searching a projects tasks.
 
 [Details][phase-three]
 
-### Phase 4: Get Todos working and Polish up the project so far (1 day)
+### Phase 4: Get Todos working and Polish up the project so far (1.5 days)
 
 In Phase 4, I will add todo items under each task so that a task can be broken up into parts. I will build the React views and everything required to be able to add todos to a task, and complete them. At this point, a lot of the functionality of the site should be functional (Adding projects, tasks, and todos, and completing them.) I will spend a little time working with the CSS for my React components, and clean up the user interface.
 
 [Details][phase-four]
 
-### Phase 5: Tags and Searching (1.5 days)
+### Phase 5: Tags and Searching (1 days)
 
 During Phase 5, I will implement tags that can be placed on tasks. I will also work on developing searching for tasks and tags, which will pull up a pane of tasks related to the search terms or to a tag.
 
