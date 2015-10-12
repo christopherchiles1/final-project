@@ -1,13 +1,13 @@
 # View Wireframes
 
-## New User
-![new-user]
+## Sign Up / Sign In
+![signin]
 
-## New Session
-![new-session]
+## Dashboard
+![dashboard]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Workspace
+![workspace]
 
 ## NotebooksIndex / NotebookIndexItem
 ![notebooks]
@@ -18,9 +18,7 @@
 ## Component Heirarchy
 ![component-heirarchy]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[signin]: ./wireframes/signin.png
+[dashboard]: ./wireframes/dashboard.png
+[workspace]: ./wireframes/workspace.png
 [component-heirarchy]: ./wireframes/component_heirarchy.png
