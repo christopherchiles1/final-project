@@ -15,4 +15,4 @@
 [signin]: ./wireframes/signin.png
 [dashboard]: ./wireframes/dashboard.png
 [workspace]: ./wireframes/workspace.png
-[component-heirarchy]: ./wireframes/component-heirarchy.png
+[component-heirarchy]: ./wireframes/component-heirarchy.md

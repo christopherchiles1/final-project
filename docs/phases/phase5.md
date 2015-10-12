@@ -2,34 +2,23 @@
 
 ## Rails
 ### Models
-* Reminder
+  * Tags
+  * Taggings
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+  * Api::TagsController (create, destroy, index, show, update)
 
 ### Views
-* reminders/index.json.jbuilder
+  * tags/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+  * SearchIndex
 
 ### Stores
-* Reminder
 
 ### Actions
-* ApiActions.receiveAllReminders
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
 
 ## Gems/Libraries
