@@ -9,6 +9,17 @@
     _projects = projects;
   };
 
+  var _updateProject = function (project) {
+    var updateProject = _projects.find(function (p) {
+      return p.id === project.id;
+    });
+    if (updateProject) {
+      _projects.splice(_projects.indexOf(updateProject), 1, project);
+    } else {
+      _projects.push(project);
+    }
+  };
+
   root.ProjectStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
       return _projects.slice();
@@ -26,6 +37,10 @@
       switch(payload.actionType) {
         case ProjectConstants.PROJECTS_RECEIVED:
           _resetProjects(payload.projects);
+          ProjectStore.emit(PROJECT_CHANGE_EVENT);
+          break;
+        case ProjectConstants.PROJECT_RECEIVED:
+          _updateProject(payload.project);
           ProjectStore.emit(PROJECT_CHANGE_EVENT);
           break;
       }

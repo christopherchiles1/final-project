@@ -1,5 +1,6 @@
 ## React Components
 * App
+  * NavBar
   * Dashboard
     * ProjectsIndex
       * ProjectsForm

@@ -14,6 +14,18 @@
         actionType: ProjectConstants.PROJECTS_RECEIVED,
         projects: projects
       });
+    },
+
+    fetchSingleProject: function (id) {
+      ApiUtil.fetchSingleProject(id);
+      // Dispatching here
+    },
+
+    receiveSingleProject: function (project) {
+      AppDispatcher.dispatch({
+        actionType: ProjectConstants.PROJECT_RECEIVED,
+        project: project
+      });
     }
   };
 }(this));
