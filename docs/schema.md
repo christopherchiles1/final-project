@@ -7,7 +7,7 @@ id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 description | text      | not null
-index       | integer   | not null
+ord         | integer   | not null
 
 ## tasks
 column name | data type | details
@@ -16,9 +16,8 @@ id          | integer   | not null, primary key
 project_id  | integer   | not null, foreign key (references projects), indexed
 title       | integer   | not null
 description | string    | not null
-index       | integer   | not null
+ord         | integer   | not null
 deadline    | date      |
-elapsed_time| integer   | not null
 type        | string    | not null
 
 ## todos
@@ -28,7 +27,7 @@ id          | integer   | not null, primary key
 task_id     | integer   | not null, foreign key (references tasks), indexed
 body        | string    | not null
 completed   | boolean   | not null, default: false
-index       | integer   | not null
+ord         | integer   | not null
 
 ## tags
 column name | data type | details
