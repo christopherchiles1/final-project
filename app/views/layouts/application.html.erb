@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if current_user %>
+  <%= current_user.username %> is logged in.
+  <%= button_to("Sign out", session_url, {method: :delete}) %>
+<% end %>
+
+<%= flash.now[:errors] %>
+
 <%= yield %>
 
 </body>
