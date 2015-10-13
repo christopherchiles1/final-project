@@ -2,9 +2,12 @@
   'use strict';
   root.ApiUtil = {
     fetchAllProjects: function () {
-      $.ajax(
-
-      );
+      $.ajax({
+        url: "api/projects",
+        success: function (projects) {
+          ProjectActions.receiveAllProjects(projects);
+        }
+      });
     }
   };
 }(this));
