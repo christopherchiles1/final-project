@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     )
     if @user.save
       login!(@user)
-      redirect_to static_pages_root_url
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

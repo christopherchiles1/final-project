@@ -1,10 +1,10 @@
 (function(root) {
   'use strict';
 
-  root.App = React.createClass({
+  root.Navbar = React.createClass({
     render: function () {
       return (
-        <div className="app">
+        <div className="navbar">
           {this.props.children}
         </div>
       );

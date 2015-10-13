@@ -1,11 +1,12 @@
 ## React Components
 * App
-  * NavBar
   * Dashboard
+    * Navbar
     * ProjectsIndex
       * ProjectsForm
       * ProjectsIndexItem
   * Workspace
+    * Navbar
     * ProjectSidebar
     * TasksIndex
       * TasksForm
