@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  root.PokemonConstants = {
-    POKEMONS_RECEIVED: "POKEMONS_RECEIVED"
+  root.ProjectConstants = {
+    PROJECT_RECEIVED: "PROJECT_RECEIVED"
   };
 }(this));

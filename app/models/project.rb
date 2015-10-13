@@ -12,7 +12,8 @@
 #
 
 class Project < ActiveRecord::Base
-  validates :user, :title, :description, :ord, presence: true
+  validates :user, :title, :ord, presence: true
+  validates :description, length: { minimum: 0 }
 
   belongs_to :user
 end

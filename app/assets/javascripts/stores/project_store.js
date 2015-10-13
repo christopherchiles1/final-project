@@ -1,6 +1,8 @@
 (function(root) {
   'use strict';
 
+  var PROJECT_CHANGE_EVENT = "PROJECT_CHANGE_EVENT";
+
   var _projects = [];
 
   var _resetProjects = function (projects) {
@@ -23,7 +25,7 @@
     dispatcherID: AppDispatcher.register(function (payload) {
       switch(payload.actionType) {
         case ProjectConstants.PROJECTS_RECEIVED:
-          resetProjects(payload.projects);
+          _resetProjects(payload.projects);
           ProjectStore.emit(PROJECT_CHANGE_EVENT);
           break;
       }

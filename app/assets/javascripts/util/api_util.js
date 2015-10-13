@@ -3,7 +3,7 @@
   root.ApiUtil = {
     fetchAllProjects: function () {
       $.ajax({
-        url: "api/projects",
+        url: "/api/projects",
         success: function (projects) {
           ProjectActions.receiveAllProjects(projects);
         }
