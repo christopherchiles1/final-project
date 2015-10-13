@@ -33,7 +33,7 @@ Life Tracker allows users to:
 During Phase 1, I will implement user signup, login, and logout with associated
 authentication (using BCrypt). I will have a user dashboard page after signup
 which will hold the root React component. I will set up a full JSON API for
-projects, and a users projects will be listed on the dashboard.
+projects, and users will be able to get and post projects via the API.
 
 [Details][phase-one]
 
