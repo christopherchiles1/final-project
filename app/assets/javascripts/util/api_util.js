@@ -27,6 +27,38 @@
           ProjectActions.receiveSingleProject(project);
         }
       });
+    },
+
+    createProject: function (project) {
+      $.ajax({
+        url: 'api/projects',
+        type: 'POST',
+        data: { project: project },
+        success: function (project) {
+          ProjectActions.receiveSingleProject(project);
+        }
+      });
+    },
+
+    updateProject: function (project) {
+      $.ajax({
+        url: 'api/projects' + project.id,
+        type: 'PATCH',
+        data: { project: project },
+        success: function (project) {
+          ProjectActions.receiveSingleProject(project);
+        }
+      });
+    },
+
+    deleteProject: function (id) {
+      $.ajax({
+        url: 'api/projects' + id,
+        type: 'DELETE',
+        success: function () {
+          // TODO: deleteProject callback
+        }
+      });
     }
   };
 }(this));

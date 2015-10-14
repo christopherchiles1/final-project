@@ -26,6 +26,23 @@
         actionType: ProjectConstants.PROJECT_RECEIVED,
         project: project
       });
+    },
+
+    createProject: function (project) {
+      ApiUtil.createProject(project);
+      // Dispatching here
+      // the api callback can use receiveSingleProject action
+    },
+
+    updateProject: function (project) {
+      ApiUtil.updateProject(project);
+      // Dispatching here
+      // api callback can use receiveSingleProject action
+    },
+
+    deleteProject: function (id) {
+      ApiUtil.deleteProject(id);
+      // Dispatching here
     }
   };
 }(this));
