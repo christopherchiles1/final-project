@@ -9,8 +9,9 @@
 <body>
 
 <% if current_user %>
-  <%= current_user.username %> is logged in.
-  <%= button_to("Sign out", session_url, {method: :delete}) %>
+  <script type="text/javascript">
+    window.CURRENT_USER_USERNAME = "<%= current_user.username %>"
+  </script>
 <% end %>
 
 <%= flash.now[:errors] %>
