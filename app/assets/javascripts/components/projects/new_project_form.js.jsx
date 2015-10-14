@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  root.ProjectForm = React.createClass({
+  root.NewProjectForm = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
@@ -25,25 +25,23 @@
     render: function () {
       return (
         <div className="col-xs-4">
-          <form className="new-project"
+          <form className="project project-new"
             onSubmit={this._createProject}>
             <div>
-              <label htmlFor="title">Title: </label>
-              <input
+              <input className="new-project-title"
+                placeholder="New Project Title"
                 type="text"
-                id="title"
                 valueLink={this.linkState("title")}
               />
             </div>
             <div>
-              <label htmlFor="description">Description: </label>
-              <input
-                type="text"
-                id="description"
+              <textarea className="project-detail"
+                rows="3"
+                placeholder="Description"
                 valueLink={this.linkState("description")}
               />
             </div>
-            <button>Add Project</button>
+            <button className="pull-right">Add Project</button>
           </form>
         </div>
       );

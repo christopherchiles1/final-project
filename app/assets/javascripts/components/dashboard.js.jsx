@@ -7,14 +7,14 @@
         <div>
           <Navbar type="dashboard" />
           <div className="container dashboard">
-            <div className="row page-header">
+            <div className="row">
               <div className="col-xs-6">
-                <h4>Projects: </h4>
+                <div className="dashboard-header">Projects: </div>
               </div>
               <div className="col-xs-6">
-                <button type="button" className="btn btn-link pull-right">
+                <a href="#/dashboard/new-project" className="pull-right">
                   New Project
-                </button>
+                </a>
               </div>
             </div>
             <ProjectsIndex>

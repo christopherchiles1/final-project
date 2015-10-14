@@ -9,7 +9,7 @@ $(function () {
     <Route path='/' component={App}>
       <IndexRoute component={Dashboard} />
       <Route path='dashboard' component={Dashboard}>
-        <Route path='new-project' component={ProjectForm} />
+        <Route path='new-project' component={NewProjectForm} />
       </Route>
     </Route>
   );
