@@ -1,3 +1,38 @@
-// Place all the styles related to the Api::Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.project {
+  border: 1px solid cornflowerblue;
+  background-color: #ace;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  height: 75px;
+  overflow: hidden;
+}
+
+.project-title {
+  font-size: 16px;
+  border-bottom: 1px solid blue;
+}
+
+.project-detail {
+  font-size: 12px;
+}
+
+.project.project-new {
+  background-color: goldenrod;
+  height: 159px;
+}
+
+.project-title.project-new {
+  border-bottom: 1px solid blue;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.project-detail.project-new {
+  width: 100%;
+}
+
+.project:hover {
+  border: 1px solid goldenrod;
+  cursor: pointer;
+}

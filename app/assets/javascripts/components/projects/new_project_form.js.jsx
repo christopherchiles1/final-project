@@ -28,15 +28,15 @@
           <form className="project project-new"
             onSubmit={this._createProject}>
             <div>
-              <input className="new-project-title"
+              <input className="project-title project-new"
                 placeholder="New Project Title"
                 type="text"
                 valueLink={this.linkState("title")}
               />
             </div>
             <div>
-              <textarea className="project-detail"
-                rows="3"
+              <textarea className="project-detail project-new"
+                rows="5"
                 placeholder="Description"
                 valueLink={this.linkState("description")}
               />
