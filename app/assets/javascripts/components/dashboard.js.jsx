@@ -6,9 +6,10 @@
       return (
         <div className="dashboard">
           <Navbar type="dashboard" />
-          <h1 class="dashboard-header">Projects:</h1>
-          {this.props.children}
-          <ProjectsIndex />
+          <h1 className="dashboard-header">Projects:</h1>
+          <ProjectsIndex>
+            {this.props.children}
+          </ProjectsIndex>
         </div>
       );
     }

@@ -8,11 +8,11 @@ $(function () {
   var routes = (
     <Route path='/' component={App}>
       <Route path='dashboard' component={Dashboard}>
+        <Route path='new-project' component={ProjectForm}/>
       </Route>
     </Route>
   );
   // Nest this under '/dashboard'
-        // <Route path='new-project' component={ProjectForm}/>
   // Nest this under '/' when the time comes
       // <Route path='workspace' component={Workspace}>
       //   <Route path='new-task' component={ProjectForm}/>
