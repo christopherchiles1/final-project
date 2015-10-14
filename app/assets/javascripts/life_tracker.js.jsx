@@ -7,6 +7,7 @@ $(function () {
 
   var routes = (
     <Route path='/' component={App}>
+      <IndexRoute component={Dashboard} />
       <Route path='dashboard' component={Dashboard}>
         <Route path='new-project' component={ProjectForm} />
       </Route>

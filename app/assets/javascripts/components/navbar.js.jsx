@@ -6,11 +6,25 @@
       // this.props.type is either 'dashboard' or 'workspace'
       // NOTE: Navbar is currently NOT rendering children.
       return (
-        <nav className="navbar navbar-default">
+        <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container-fluid">
-            <div>Logo Here</div>
-            <div onClick={this._logoutUser}>{CURRENT_USER_USERNAME}</div>
-          </div>
+            <div className="navbar-header">
+              <a className="navbar-brand" href="#">Life Tracker</a>
+            </div>{/* .navbar-header */}
+            <ul className="nav navbar-nav navbar-right">
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle"
+                  data-toggle="dropdown">
+                  {CURRENT_USER_USERNAME}
+                </a>
+                <ul className="dropdown-menu">
+                  <li onClick={this._logoutUser}>
+                    <a href="#">Sign out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>{/* .navbar-nav */}
+          </div>{/* .container-fluid */}
         </nav>
       );
     },

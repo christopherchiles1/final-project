@@ -6,13 +6,14 @@
       return (
         <div className="dashboard">
           <Navbar type="dashboard" />
-          <h1 className="dashboard-header">Projects:</h1>
-          <ProjectsIndex>
-            {this.props.children}
-          </ProjectsIndex>
+          <div className="dashboard-content">
+            <h1 className="dashboard-header">Projects:</h1>
+            <ProjectsIndex>
+              {this.props.children}
+            </ProjectsIndex>
+          </div>
         </div>
       );
     }
   });
-
 }(this));
