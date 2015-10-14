@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
     if @project.save
       render json: @project
     else

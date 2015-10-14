@@ -26,7 +26,7 @@
           {
             this.state.projects.map(function (project) {
               return (
-                <ProjectsIndexItem
+                <ProjectsIndexItem className="project-index-item"
                   key={project.id}
                   project={project}/>
                );

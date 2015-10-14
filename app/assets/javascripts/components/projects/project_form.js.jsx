@@ -11,9 +11,21 @@
       };
     },
 
+    _createProject: function (e) {
+      e.preventDefault();
+      var project = {
+        title: this.state.title,
+        description: this.state.description,
+        ord: 1 // NOTE: Change this later
+      };
+      ProjectActions.createProject(project);
+      this.setState({title: '', description: ''});
+    },
+
     render: function () {
       return (
-        <form className="new-project">
+        <form className="new-project"
+          onSubmit={this._createProject}>
           <div>
             <label htmlFor="title">Title: </label>
             <input
