@@ -24,26 +24,28 @@
 
     render: function () {
       return (
-        <form className="new-project"
-          onSubmit={this._createProject}>
-          <div>
-            <label htmlFor="title">Title: </label>
-            <input
-              type="text"
-              id="title"
-              valueLink={this.linkState("title")}
-            />
-          </div>
-          <div>
-            <label htmlFor="description">Description: </label>
-            <input
-              type="text"
-              id="description"
-              valueLink={this.linkState("description")}
-            />
-          </div>
-          <button>Add Project</button>
-        </form>
+        <div className="col-xs-4">
+          <form className="new-project"
+            onSubmit={this._createProject}>
+            <div>
+              <label htmlFor="title">Title: </label>
+              <input
+                type="text"
+                id="title"
+                valueLink={this.linkState("title")}
+              />
+            </div>
+            <div>
+              <label htmlFor="description">Description: </label>
+              <input
+                type="text"
+                id="description"
+                valueLink={this.linkState("description")}
+              />
+            </div>
+            <button>Add Project</button>
+          </form>
+        </div>
       );
     }
   });

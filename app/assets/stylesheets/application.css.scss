@@ -1,0 +1,29 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.container.dashboard {
+  max-width: 720px;
+}
+
+.project-bubble {
+  border: 1px solid cornflowerblue;
+  background-color: #ace;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  min-height: 75px;
+}
+
+.project-bubble:hover {
+  border: 1px solid goldenrod;
+  cursor: pointer;
+}
+
+.project-title {
+  font-size: 16px;
+  border-bottom: 1px solid blue;
+}
+
+.project-detail {
+  font-size: 12px;
+}

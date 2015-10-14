@@ -21,7 +21,7 @@
 
     render: function () {
       return (
-        <ul className="projects-index">
+        <div className="row">
           {this.props.children}
           {
             this.state.projects.map(function (project) {
@@ -32,7 +32,7 @@
                );
             })
           }
-        </ul>
+        </div>
       );
     }
   });
