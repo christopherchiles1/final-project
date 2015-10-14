@@ -4,10 +4,13 @@
   root.Dashboard = React.createClass({
     render: function () {
       return (
-        <div className="dashboard">
+        <div>
           <Navbar type="dashboard" />
-          <div className="dashboard-content">
-            <h1 className="dashboard-header">Projects:</h1>
+          <div className="body container">
+            <h2>Projects: </h2>
+            <button type="button" className="btn btn-link pull-right">
+              New Project
+            </button>
             <ProjectsIndex>
               {this.props.children}
             </ProjectsIndex>
