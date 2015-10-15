@@ -2,11 +2,10 @@
   'use strict';
 
   root.Sidebar = React.createClass({
-    // has this.props.projects
     render: function () {
       return (
-        <div className="dev-sidebar">
-          <div className="dev-projects-list">
+        <div className="sidebar">
+          <div className="projects-list">
             {
               this.props.projects.map(function (project) {
                 return (

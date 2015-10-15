@@ -4,7 +4,7 @@
   root.PaneArea = React.createClass({
     render: function () {
       return (
-        <div className="dev-pane-area">
+        <div className="pane-area">
           {
             this.props.projects.map(function (project) {
               return (

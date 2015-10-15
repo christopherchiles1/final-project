@@ -11,7 +11,7 @@
 
     render: function () {
       return (
-        <div className="dev-projects-list-item"
+        <div className="projects-list-item"
           onClick={this._togglePane}>
             { this.props.project.title }
         </div>

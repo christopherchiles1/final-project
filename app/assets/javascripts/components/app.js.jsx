@@ -5,7 +5,7 @@
     render: function () {
       return (
         <div className="app">
-          <NavbarDev />
+          <Navbar />
           <Workspace />
         </div>
       );

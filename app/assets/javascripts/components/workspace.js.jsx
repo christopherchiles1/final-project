@@ -27,7 +27,7 @@
 
     render: function () {
       return (
-        <div className="container-fluid shift-down dev-workspace">
+        <div className="container-fluid shift-down workspace">
           <div className="row">
             <div className="col-xs-2 nopadding">
               <Sidebar projects={ this.state.projects } />

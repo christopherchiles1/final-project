@@ -1,10 +1,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'navbar';
-@import 'dashboard';
 @import 'api/projects';
 
-.dashboard {
+.compressed {
   max-width: 720px;
   margin: 0 auto;
 }
@@ -13,57 +11,50 @@
   padding-top: 30px;
 }
 
-.dropdown-toggle {
-  cursor: pointer;
-}
-
 .group:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-// Development CSS
-
 .nopadding {
    padding: 0 !important;
    margin: 0 !important;
 }
 
-.dev-navbar {
+.navbar-div {
   position: fixed;
   height: 40px;
   width: 100%;
   border: 3px solid red;
 }
 
-.dev-workspace {
+.workspace {
   border: 3px solid magenta;
 }
 
-.dev-sidebar {
+.sidebar {
   height: 100%;
   border: 3px solid orange;
 }
 
-.dev-projects-list {
+.projects-list {
   border: 3px solid yellow;
 }
 
-.dev-projects-list-item {
+.projects-list-item {
   border: 3px solid green;
   padding: 5px;
 }
-////
 
-.dev-pane-area {
+.pane-area {
   border: 3px solid blue;
 }
 
-.dev-project-pane {
+.project-pane {
   border: 3px solid goldenrod;
 }
 
-.dev-project-pane-header {
+.project-pane-header {
 
 }
