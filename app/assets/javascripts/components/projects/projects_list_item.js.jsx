@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  root.ProjectsIndexItemDev = React.createClass({
+  root.ProjectsListItem = React.createClass({
     _togglePane: function (e) {
       ProjectActions.updateProject({
         id: this.props.project.id,
@@ -11,7 +11,7 @@
 
     render: function () {
       return (
-        <div className="dev-projects-index-item"
+        <div className="dev-projects-list-item"
           onClick={this._togglePane}>
             { this.props.project.title }
         </div>

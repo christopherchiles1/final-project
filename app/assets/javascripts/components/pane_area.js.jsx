@@ -5,11 +5,18 @@
     render: function () {
       return (
         <div className="dev-pane-area">
-          This is the pane area
-          {this.props.children}
+          {
+            this.props.projects.map(function (project) {
+              return (
+                <ProjectPane
+                  key={project.id}
+                  project={project}
+                  count={ this.props.projects.length }/>
+               );
+            }.bind(this))
+          }
         </div>
       );
     }
   });
-
 }(this));

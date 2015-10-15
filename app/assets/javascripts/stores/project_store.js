@@ -25,7 +25,7 @@
       return _projects.slice();
     },
 
-    visible: function () {
+    visibleProjects: function () {
       return _projects.filter(function (project) {
         return project.visible;
       });
