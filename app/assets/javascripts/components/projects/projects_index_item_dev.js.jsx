@@ -3,8 +3,10 @@
 
   root.ProjectsIndexItemDev = React.createClass({
     _togglePane: function (e) {
-      // load the projectPane here.
-      alert("You clicked on" + this.props.project.title);
+      ProjectActions.updateProject({
+        id: this.props.project.id,
+        visible: !this.props.project.visible
+      });
     },
 
     render: function () {

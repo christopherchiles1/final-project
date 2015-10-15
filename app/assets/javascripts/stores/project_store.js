@@ -25,6 +25,12 @@
       return _projects.slice();
     },
 
+    visible: function () {
+      return _projects.filter(function (project) {
+        return project.visible;
+      });
+    },
+
     addProjectChangeListener: function (callback) {
       this.addListener(PROJECT_CHANGE_EVENT, callback);
     },

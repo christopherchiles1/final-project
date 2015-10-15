@@ -42,7 +42,7 @@
 
     updateProject: function (project) {
       $.ajax({
-        url: 'api/projects' + project.id,
+        url: 'api/projects/' + project.id,
         type: 'PATCH',
         data: { project: project },
         success: function (project) {
@@ -53,7 +53,7 @@
 
     deleteProject: function (id) {
       $.ajax({
-        url: 'api/projects' + id,
+        url: 'api/projects/' + id,
         type: 'DELETE',
         success: function () {
           // TODO: deleteProject callback
