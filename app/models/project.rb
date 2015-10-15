@@ -9,10 +9,12 @@
 #  ord         :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  visible     :boolean          not null
 #
 
 class Project < ActiveRecord::Base
   validates :user, :title, :ord, presence: true
+  validates :visible, inclusion: [true, false]
   validates :description, length: { minimum: 0 }
 
   belongs_to :user
