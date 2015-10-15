@@ -17,9 +17,9 @@
                 </a>
               </div>
             </div>
-            <ProjectsIndex>
-              {this.props.children}
-            </ProjectsIndex>
+
+            {this.props.children}
+            <ProjectsIndex />
           </div>
         </div>
       );

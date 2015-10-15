@@ -8,7 +8,7 @@
 
     render: function () {
       return (
-        <div className="col-xs-4">
+        <div className="col-xs-6 col-sm-4">
           <div onClick={ this._loadWorkspace } className="project">
             <div className="project-title">
               { this.props.project.title }

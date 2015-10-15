@@ -17,9 +17,20 @@
   font-size: 12px;
 }
 
+.row.project-new {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 5% auto;
+  max-width: 720px;
+  z-index: 9;
+}
+
 .project.project-new {
+  opacity: 0.9;
   background-color: goldenrod;
-  height: 159px;
+  padding: 5px;
+  height: auto;
 }
 
 .project-title.project-new {

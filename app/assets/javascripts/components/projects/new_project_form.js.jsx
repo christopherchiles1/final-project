@@ -24,25 +24,27 @@
 
     render: function () {
       return (
-        <div className="col-xs-4">
-          <form className="project project-new"
-            onSubmit={this._createProject}>
-            <div>
-              <input className="project-title project-new"
-                placeholder="New Project Title"
-                type="text"
-                valueLink={this.linkState("title")}
-              />
-            </div>
-            <div>
-              <textarea className="project-detail project-new"
-                rows="5"
-                placeholder="Description"
-                valueLink={this.linkState("description")}
-              />
-            </div>
-            <button className="pull-right">Add Project</button>
-          </form>
+        <div className="row project-new">
+          <div className="col-xs-offset-3 col-xs-6">
+            <form className="project project-new"
+              onSubmit={this._createProject}>
+              <div>
+                <input className="project-title project-new"
+                  placeholder="New Project Title"
+                  type="text"
+                  valueLink={this.linkState("title")}
+                />
+              </div>
+              <div>
+                <textarea className="project-detail project-new"
+                  rows="5"
+                  placeholder="Description"
+                  valueLink={this.linkState("description")}
+                />
+              </div>
+              <button className="pull-right">Add Project</button>
+            </form>
+          </div>
         </div>
       );
     }
