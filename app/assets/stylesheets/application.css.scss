@@ -1,7 +1,24 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'navbar';
+@import 'dashboard';
 @import 'api/projects';
 
-.container.dashboard {
+.dashboard {
   max-width: 720px;
+  margin: 0 auto;
+}
+
+.shift-down {
+  padding: 30px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.group:after {
+  content: " ";
+  display: block;
+  clear: both;
 }

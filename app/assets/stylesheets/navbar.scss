@@ -1,0 +1,19 @@
+.lt-navbar {
+  height: 40px;
+  width: 100%;
+  background-color: cornflowerblue;
+  color: palegoldenrod;
+  box-shadow: 0 3px 9px grey;
+  position: fixed;
+  z-index: 10;
+}
+
+.lt-navbar-left {
+  float: left;
+  padding: 10px;
+}
+
+.lt-navbar-right {
+  float: right;
+  padding: 10px;
+}

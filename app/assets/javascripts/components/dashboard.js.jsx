@@ -7,9 +7,9 @@
         <div>
           <Navbar type="dashboard" />
           <div className="container dashboard">
-            <div className="row">
+            <div className="row dashboard-header">
               <div className="col-xs-6">
-                <div className="dashboard-header">Projects: </div>
+                <div>Projects: </div>
               </div>
               <div className="col-xs-6">
                 <a href="#/dashboard/new-project" className="pull-right">

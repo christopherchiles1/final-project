@@ -2,38 +2,38 @@
   'use strict';
 
   root.Navbar = React.createClass({
+    _logoutUser: function () {
+      ApiActions.logoutUser();
+    },
+
     render: function () {
       // this.props.type is either 'dashboard' or 'workspace'
       // NOTE: Navbar is currently NOT rendering children.
       return (
         <div>
-          <nav className="navbar navbar-default navbar-fixed-top">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <a className="navbar-brand" href="#">Life Tracker</a>
-              </div>{/* .navbar-header */}
-              <ul className="nav navbar-nav navbar-right">
-                <li className="dropdown">
-                  <a href="#" className="dropdown-toggle"
+          <nav className="lt-navbar">
+            <div className="container dashboard group">
+              <div className="lt-navbar-left">
+                Life Tracker
+              </div>
+              <ul className="lt-navbar-right">
+                <div className="dropdown">
+                  <div className="dropdown-toggle text-uppercase"
                     data-toggle="dropdown">
                     {CURRENT_USER_USERNAME}
-                  </a>
-                  <ul className="dropdown-menu">
+                  </div>
+                  <ul className="dropdown-menu dropdown-menu-right">
                     <li onClick={this._logoutUser}>
                       <a href="#">Sign out</a>
                     </li>
                   </ul>
-                </li>
-              </ul>{/* .navbar-nav */}
-            </div>{/* .container-fluid */}
+                </div>
+              </ul>
+            </div>
           </nav>
-          <nav className="navbar navbar-default"></nav>
+          <div className="shift-down"></div>
         </div>
       );
-    },
-
-    _logoutUser: function () {
-      ApiActions.logoutUser();
     }
   });
 
