@@ -25,7 +25,9 @@
           {
             this.state.projects.map(function (project) {
               return (
-                <div className="dev-projects-index-item">{project.title}</div>
+                <ProjectsIndexItemDev
+                  key={project.id}
+                  project={project}/>
                );
             })
           }

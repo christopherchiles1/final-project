@@ -25,6 +25,11 @@
 
 // Development CSS
 
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
 .dev-navbar {
   position: fixed;
   height: 40px;
@@ -38,13 +43,12 @@
 }
 
 .dev-projects-index {
-  width: 100%;
   border: 3px solid yellow;
 }
 
 .dev-projects-index-item {
-  width: 100%;
   border: 3px solid green;
+  padding: 5px;
 }
 
 .dev-pane-area {

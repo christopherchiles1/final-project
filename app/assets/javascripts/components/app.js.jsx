@@ -8,13 +8,13 @@
           <NavbarDev />
           <div className="container-fluid shift-down">
             <div className="row">
-              <div className="col-xs-2">
+              <div className="col-xs-2 nopadding">
                 <Sidebar>
                   <ProjectsIndexDev />
                 </Sidebar>
               </div>
-              <div className="row col-xs-10 dev-pane-area">
-
+              <div className="row col-xs-10 nopadding">
+                <PaneArea />
               </div>
             </div>
           </div>
