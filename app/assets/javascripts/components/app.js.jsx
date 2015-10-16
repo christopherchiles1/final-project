@@ -23,7 +23,7 @@
             modalProject={ this.state.modalProject }/>;
       }
       return (
-        <div className="app">
+        <div className="app tall">
           { modal }
           <Navbar />
           <Workspace openModal={this._openModal}/>

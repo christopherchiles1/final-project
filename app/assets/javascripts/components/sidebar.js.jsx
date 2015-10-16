@@ -8,7 +8,7 @@
 
     render: function () {
       return (
-        <div className="sidebar">
+        <div className="sidebar tall">
           <button type="button" className="btn btn-primary btn-block"
             onClick={this.props.openModal}>
             New Project

@@ -1,18 +1,18 @@
-// New stuff
-
-.projects-list {
-  border: 3px solid yellow;
+.projects-list-item {
+  padding: 5px 5px 5px 10px;
 }
 
-.projects-list-item {
-  border: 3px solid green;
+.projects-list-item:hover {
+  cursor: pointer;
+  background-color: #555755;
   padding: 5px;
 }
 
 .project-pane {
   border: 1px solid grey;
   margin: 0 2px 2px 4px;
-  float: left
+  float: left;
+  height: calc(100% - 5px);
 }
 
 .project-pane-header {
