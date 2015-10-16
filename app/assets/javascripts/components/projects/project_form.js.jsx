@@ -5,10 +5,10 @@
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
-      if (this.props.modalProject) {
+      if (this.props.project) {
         return {
-          title: this.props.modalProject.title,
-          description: this.props.modalProject.description
+          title: this.props.project.title,
+          description: this.props.project.description
         };
       } else {
         return {
@@ -37,7 +37,7 @@
     _updateProject: function (e) {
       e.preventDefault();
       var project = {
-        id: this.props.modalProject.id,
+        id: this.props.project.id,
         title: this.state.title,
         description: this.state.description
       };
@@ -46,16 +46,17 @@
       ProjectActions.updateProject(project, callback);
     },
 
-    _closeModal: function (e) {
+    handleCloseProjectForm: function (e) {
+      e.preventDefault();
       if (e.currentTarget === e.target) {
-        this.props.closeModal();
+        this.props.closeProjectForm();
       }
     },
 
     render: function () {
       var callback;
       var text;
-      if (this.props.modalProject) {
+      if (this.props.project) {
         callback = this._updateProject;
         text = "Update Project";
       } else {
@@ -64,7 +65,7 @@
       }
       return (
         <div className="row modal-bg"
-          onClick={this._closeModal}>
+          onClick={this.handleCloseProjectForm}>
           <div className="col-xs-offset-4 col-xs-4">
             <form className="project-form"
               onSubmit={callback}>
@@ -85,7 +86,7 @@
               </div>
               <button className="btn btn-primary pull-right">{text}</button>
               <button className="btn btn-link"
-                onClick={this.props.closeModal}>Cancel</button>
+                onClick={this.handleCloseProjectForm}>Cancel</button>
             </form>
           </div>
         </div>

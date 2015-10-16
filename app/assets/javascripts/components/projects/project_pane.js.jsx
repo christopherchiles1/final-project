@@ -2,6 +2,16 @@
   'use strict';
 
   root.ProjectPane = React.createClass({
+    handleOpenProjectForm: function (e) {
+      e.preventDefault();
+      this.props.openProjectForm.call(null, this.props.project);
+    },
+
+    handleTogglePane: function (e) {
+      e.preventDefault();
+      this.props.togglePane.call(null, this.props.project);
+    },
+
     render: function () {
       var percent = 100 / this.props.count;
       return (
@@ -13,10 +23,10 @@
             </div>
             <div className="project-pane-header options btn-group"
               role="group">
-              <button onClick={this.props.openModal.bind(null, this.props.project)}>
+              <button onClick={this.handleOpenProjectForm}>
                 <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
               </button>
-              <button onClick={this.props.togglePane.bind(null, this.props.project)}>
+              <button onClick={this.handleTogglePane}>
                 <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
               </button>
             </div>

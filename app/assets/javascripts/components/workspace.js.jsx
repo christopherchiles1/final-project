@@ -25,7 +25,7 @@
       });
     },
 
-    _togglePane: function (project, e) {
+    _togglePane: function (project) {
       ProjectActions.updateProject({
         id: project.id,
         visible: !project.visible
@@ -40,12 +40,13 @@
               <Sidebar
                 projects={ this.state.projects }
                 togglePane={this._togglePane}
-                openModal={this.props.openModal} />
+                openProjectForm={this.props.openProjectForm}
+                openProjectDelete={this.props.openProjectDelete} />
             </div>
             <div className="col-xs-10 tall nopadding">
               <PaneArea projects={ this.state.visibleProjects }
                 togglePane={this._togglePane}
-                openModal={this.props.openModal} />
+                openProjectForm={this.props.openProjectForm} />
             </div>
           </div>
         </div>

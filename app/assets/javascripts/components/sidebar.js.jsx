@@ -2,13 +2,9 @@
   'use strict';
 
   root.Sidebar = React.createClass({
-    // _renderProjectForm: function () {
-    //   alert("Render coming soon!");
-    // },
-
     newProject: function (e) {
       e.preventDefault();
-      this.props.openModal();
+      this.props.openProjectForm();
     },
 
     render: function () {
@@ -25,7 +21,8 @@
                   <ProjectsListItem
                     key={project.id}
                     project={project}
-                    togglePane={this.props.togglePane} />
+                    togglePane={this.props.togglePane}
+                    openProjectDelete={this.props.openProjectDelete} />
                  );
               }.bind(this))
             }

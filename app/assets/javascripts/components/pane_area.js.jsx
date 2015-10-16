@@ -13,7 +13,7 @@
                   project={ project }
                   togglePane={ this.props.togglePane }
                   count={ this.props.projects.length }
-                  openModal={ this.props.openModal }/>
+                  openProjectForm={ this.props.openProjectForm }/>
                );
             }.bind(this))
           }

@@ -53,12 +53,13 @@
       });
     },
 
-    deleteProject: function (id) {
+    deleteProject: function (id, callback) {
       $.ajax({
         url: 'api/projects/' + id,
         type: 'DELETE',
         success: function () {
-          // TODO: deleteProject callback
+          ProjectActions.removeSingleProject(id);
+          if (callback) { callback(); }
         }
       });
     }
