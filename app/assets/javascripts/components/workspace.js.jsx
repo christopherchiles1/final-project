@@ -34,8 +34,7 @@
 
     render: function () {
       return (
-        <div className="container-fluid workspace"
-          style={{ height: "calc(" + window.innerHeight + "px - 40px)" }}>
+        <div className="container-fluid workspace">
           <div className="row">
             <div className="col-xs-2 nopadding">
               <Sidebar

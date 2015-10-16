@@ -2,6 +2,10 @@
 @import 'bootstrap';
 @import 'api/projects';
 
+html, body, .workspace, .app, #content {
+  height: 100%;
+}
+
 .compressed {
   max-width: 720px;
   margin: 0 auto;
