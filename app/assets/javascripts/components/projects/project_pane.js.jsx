@@ -2,10 +2,6 @@
   'use strict';
 
   root.ProjectPane = React.createClass({
-    _editProject: function (e) {
-
-    },
-
     render: function () {
       var percent = 100 / this.props.count;
       return (

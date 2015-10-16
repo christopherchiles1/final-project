@@ -43,7 +43,6 @@
       };
 
       var callback = function () { this.props.closeModal(); }.bind(this);
-
       ProjectActions.updateProject(project, callback);
     },
 
@@ -57,11 +56,11 @@
       var callback;
       var text;
       if (this.props.modalProject) {
-        callback = this._createProject;
-        text = "Add Project";
-      } else {
         callback = this._updateProject;
         text = "Update Project";
+      } else {
+        callback = this._createProject;
+        text = "Add Project";
       }
       return (
         <div className="row modal-bg"

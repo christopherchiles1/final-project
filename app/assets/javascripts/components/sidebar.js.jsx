@@ -6,11 +6,16 @@
     //   alert("Render coming soon!");
     // },
 
+    newProject: function (e) {
+      e.preventDefault();
+      this.props.openModal();
+    },
+
     render: function () {
       return (
         <div className="sidebar tall">
           <button type="button" className="btn btn-primary btn-block"
-            onClick={this.props.openModal}>
+            onClick={this.newProject}>
             New Project
           </button>
           <div className="projects-list">
