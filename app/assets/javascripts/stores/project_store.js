@@ -20,6 +20,15 @@
     }
   };
 
+  var _removeProject = function (project) {
+    var removeProject = _projects.find(function (p) {
+      return p.id === project.id;
+    });
+    if (removeProject) {
+      _projects.splice(_projects.indexOf(removeProject), 1);
+    }
+  };
+
   root.ProjectStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
       return _projects.slice();
@@ -47,6 +56,10 @@
           break;
         case ProjectConstants.PROJECT_RECEIVED:
           _updateProject(payload.project);
+          ProjectStore.emit(PROJECT_CHANGE_EVENT);
+          break;
+        case ProjectConstants.PROJECT_REMOVED:
+          _removeProject(payload.project);
           ProjectStore.emit(PROJECT_CHANGE_EVENT);
           break;
       }

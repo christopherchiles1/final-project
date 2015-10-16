@@ -15,15 +15,13 @@
     },
 
     handleOpenProjectDelete: function (e) {
-      e.preventDefault();
       this.props.openProjectDelete.call(null, this.props.project);
+      e.stopPropogation();
     },
 
     handleTogglePane: function (e) {
       e.preventDefault();
-      if (e.currentTarget === e.target) {
-        this.props.togglePane.call(null, this.props.project);
-      }
+      this.props.togglePane.call(null, this.props.project);
     },
 
     render: function () {

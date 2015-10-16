@@ -29,7 +29,7 @@
         ord: 1 // NOTE: Change this later
       };
 
-      var callback = function () { this.props.closeModal(); }.bind(this);
+      var callback = function () { this.props.closeProjectForm(); }.bind(this);
 
       ProjectActions.createProject(project, callback);
     },
@@ -42,12 +42,13 @@
         description: this.state.description
       };
 
-      var callback = function () { this.props.closeModal(); }.bind(this);
+      var callback = function () { this.props.closeProjectForm(); }.bind(this);
       ProjectActions.updateProject(project, callback);
     },
 
     handleCloseProjectForm: function (e) {
-      e.preventDefault();
+      // debugger;
+      // e.preventDefault();
       if (e.currentTarget === e.target) {
         this.props.closeProjectForm();
       }
@@ -64,31 +65,31 @@
         text = "Add Project";
       }
       return (
-        <div className="row modal-bg"
-          onClick={this.handleCloseProjectForm}>
-          <div className="col-xs-offset-4 col-xs-4">
-            <form className="project-form"
-              onSubmit={callback}>
-              <div>
-                <input className="project-form-input title"
-                  ref="titleInput"
-                  placeholder="New Project Title"
-                  type="text"
-                  valueLink={this.linkState("title")}
-                />
-              </div>
-              <div>
-                <textarea className="project-form-input detail"
-                  rows="5"
-                  placeholder="Description"
-                  valueLink={this.linkState("description")}
-                />
-              </div>
-              <button className="btn btn-primary pull-right">{text}</button>
-              <button className="btn btn-link"
-                onClick={this.handleCloseProjectForm}>Cancel</button>
-            </form>
+        <div>
+          <div className="modal-bg"
+            onClick={this.handleCloseProjectForm} >
           </div>
+          <form className="project-form modal-fg"
+            onSubmit={callback}>
+            <div>
+              <input className="project-form-input title"
+                ref="titleInput"
+                placeholder="New Project Title"
+                type="text"
+                valueLink={this.linkState("title")}
+              />
+            </div>
+            <div>
+              <textarea className="project-form-input detail"
+                rows="5"
+                placeholder="Description"
+                valueLink={this.linkState("description")}
+              />
+            </div>
+            <button className="btn btn-primary pull-right">{text}</button>
+            <button className="btn btn-link"
+              onClick={this.handleCloseProjectForm}>Cancel</button>
+          </form>
         </div>
       );
     }

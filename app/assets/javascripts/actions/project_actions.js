@@ -40,15 +40,15 @@
       // api callback can use receiveSingleProject action
     },
 
-    deleteProject: function (id, callback) {
-      ApiUtil.deleteProject(id, callback);
+    deleteProject: function (project, callback) {
+      ApiUtil.deleteProject(project, callback);
       // Dispatching here
     },
 
-    removeSingleProject: function (id) {
+    removeSingleProject: function (project) {
       AppDispatcher.dispatch({
         actionType: ProjectConstants.PROJECT_REMOVED,
-        id: id
+        project: project
       });
     }
   };
