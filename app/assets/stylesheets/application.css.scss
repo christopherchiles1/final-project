@@ -11,6 +11,12 @@ html, body, .workspace, .app, #content {
   margin: 0 auto;
 }
 
+.truncated {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .group:after {
   content: " ";
   display: block;
@@ -53,6 +59,7 @@ html, body, .workspace, .app, #content {
 
 .pane-area {
   position: relative;
+  margin-right: 2px;
 }
 
 .tasks-list {

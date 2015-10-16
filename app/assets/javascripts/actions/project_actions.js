@@ -34,8 +34,8 @@
       // the api callback can use receiveSingleProject action
     },
 
-    updateProject: function (project) {
-      ApiUtil.updateProject(project);
+    updateProject: function (project, callback) {
+      ApiUtil.updateProject(project, callback);
       // Dispatching here
       // api callback can use receiveSingleProject action
     },

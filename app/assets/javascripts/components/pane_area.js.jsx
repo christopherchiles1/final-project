@@ -9,10 +9,11 @@
             this.props.projects.map(function (project) {
               return (
                 <ProjectPane
-                  key={project.id}
-                  project={project}
-                  togglePane={this.props.togglePane}
-                  count={ this.props.projects.length }/>
+                  key={ project.id }
+                  project={ project }
+                  togglePane={ this.props.togglePane }
+                  count={ this.props.projects.length }
+                  openModal={ this.props.openModal }/>
                );
             }.bind(this))
           }

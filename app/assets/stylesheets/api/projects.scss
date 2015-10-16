@@ -16,8 +16,17 @@
 }
 
 .project-pane-header {
+  position: relative;
   background-color: grey;
-  height: 20px;
+}
+
+.project-pane-header.title {
+  float: left;
+  width: calc(100% - 89px);
+}
+
+.project-pane-header.options {
+  float: right;
 }
 
 .project-form {

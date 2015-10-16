@@ -5,10 +5,16 @@
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
-      return {
-        title: '',
-        description: ''
-      };
+      if (this.props.modalProject) {
+        return {
+          title: this.props.modalProject.title,
+          description: this.props.modalProject.description
+        };
+      } else {
+        return {
+          title: '', description: ''
+        };
+      }
     },
 
     componentDidMount: function () {
@@ -28,6 +34,19 @@
       ProjectActions.createProject(project, callback);
     },
 
+    _updateProject: function (e) {
+      e.preventDefault();
+      var project = {
+        id: this.props.modalProject.id,
+        title: this.state.title,
+        description: this.state.description
+      };
+
+      var callback = function () { this.props.closeModal(); }.bind(this);
+
+      ProjectActions.updateProject(project, callback);
+    },
+
     _closeModal: function (e) {
       if (e.currentTarget === e.target) {
         this.props.closeModal();
@@ -35,12 +54,21 @@
     },
 
     render: function () {
+      var callback;
+      var text;
+      if (this.props.modalProject) {
+        callback = this._createProject;
+        text = "Add Project";
+      } else {
+        callback = this._updateProject;
+        text = "Update Project";
+      }
       return (
         <div className="row modal-bg"
           onClick={this._closeModal}>
           <div className="col-xs-offset-4 col-xs-4">
             <form className="project-form"
-              onSubmit={this._createProject}>
+              onSubmit={callback}>
               <div>
                 <input className="project-form-input title"
                   ref="titleInput"
@@ -56,7 +84,7 @@
                   valueLink={this.linkState("description")}
                 />
               </div>
-              <button className="btn btn-primary pull-right">Add Project</button>
+              <button className="btn btn-primary pull-right">{text}</button>
               <button className="btn btn-link"
                 onClick={this.props.closeModal}>Cancel</button>
             </form>

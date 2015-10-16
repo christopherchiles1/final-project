@@ -44,7 +44,8 @@
             </div>
             <div className="row col-xs-10 nopadding">
               <PaneArea projects={ this.state.visibleProjects }
-                togglePane={this._togglePane} />
+                togglePane={this._togglePane}
+                openModal={this.props.openModal} />
             </div>
           </div>
         </div>

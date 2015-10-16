@@ -41,13 +41,14 @@
       });
     },
 
-    updateProject: function (project) {
+    updateProject: function (project, callback) {
       $.ajax({
         url: 'api/projects/' + project.id,
         type: 'PATCH',
         data: { project: project },
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
+          if (callback) { callback(); }
         }
       });
     },
