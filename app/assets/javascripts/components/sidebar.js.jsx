@@ -9,7 +9,7 @@
 
     render: function () {
       return (
-        <div className="sidebar tall">
+        <div className="sidebar tall shadowed">
           <button type="button" className="btn btn-primary btn-block"
             onClick={this.newProject}>
             New Project
