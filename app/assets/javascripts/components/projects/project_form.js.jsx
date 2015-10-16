@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  root.NewProjectForm = React.createClass({
+  root.ProjectForm = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
@@ -9,6 +9,10 @@
         title: '',
         description: ''
       };
+    },
+
+    componentDidMount: function () {
+      this.refs.titleInput.getDOMNode().focus();
     },
 
     _createProject: function (e) {
@@ -24,29 +28,37 @@
       ProjectActions.createProject(project, callback);
     },
 
+    _closeModal: function (e) {
+      if (e.currentTarget === e.target) {
+        this.props.closeModal();
+      }
+    },
+
     render: function () {
       return (
-        <div className="row project-form">
-          <div className="col-xs-offset-3 col-xs-6">
-            <form className="project project-form"
+        <div className="row modal-bg"
+          onClick={this._closeModal}>
+          <div className="col-xs-offset-4 col-xs-4">
+            <form className="project-form"
               onSubmit={this._createProject}>
               <div>
-                <input className="project-title project-form"
+                <input className="project-form-input title"
+                  ref="titleInput"
                   placeholder="New Project Title"
                   type="text"
                   valueLink={this.linkState("title")}
                 />
               </div>
               <div>
-                <textarea className="project-detail project-form"
+                <textarea className="project-form-input detail"
                   rows="5"
                   placeholder="Description"
                   valueLink={this.linkState("description")}
                 />
               </div>
+              <button className="btn btn-primary pull-right">Add Project</button>
               <button className="btn btn-link"
                 onClick={this.props.closeModal}>Cancel</button>
-              <button className="btn btn-primary pull-right">Add Project</button>
             </form>
           </div>
         </div>

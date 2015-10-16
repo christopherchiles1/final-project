@@ -17,7 +17,7 @@
     render: function () {
       var modal;
       if (this.state.modalIsOpen) {
-        modal = <NewProjectForm closeModal={this._closeModal}/>;
+        modal = <ProjectForm closeModal={this._closeModal}/>;
       }
       return (
         <div className="app">

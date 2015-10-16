@@ -29,25 +29,25 @@
       });
     },
 
-    createProject: function (project) {
+    createProject: function (project, callback) {
       $.ajax({
         url: 'api/projects',
         type: 'POST',
         data: { project: project },
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
+          if (callback) { callback(); }
         }
       });
     },
 
-    updateProject: function (project, callback) {
+    updateProject: function (project) {
       $.ajax({
         url: 'api/projects/' + project.id,
         type: 'PATCH',
         data: { project: project },
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
-          callback();
         }
       });
     },

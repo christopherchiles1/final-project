@@ -25,10 +25,10 @@
       });
     },
 
-    _togglePane: function (e) {
+    _togglePane: function (project, e) {
       ProjectActions.updateProject({
-        id: this.props.project.id,
-        visible: !this.props.project.visible
+        id: project.id,
+        visible: !project.visible
       });
     },
 

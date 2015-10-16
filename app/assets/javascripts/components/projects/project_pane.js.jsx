@@ -13,7 +13,7 @@
             <span className="glyphicon glyphicon-pencil" aria-hidden="true"
               onClick={this._editProject}></span>
             <span className="glyphicon glyphicon-remove" aria-hidden="true"
-              onClick={this.props.togglePane}></span>
+              onClick={this.props.togglePane.bind(null, this.props.project)}></span>
           </div>
           <div className="tasks-list">
 

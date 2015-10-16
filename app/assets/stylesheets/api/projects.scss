@@ -20,53 +20,26 @@
   height: 20px;
 }
 
-// NOTE: Currently Unused
-.project {
-  border: 1px solid cornflowerblue;
-  background-color: #ace;
-  border-radius: 5px;
+.project-form {
+  margin: 25% auto;
   padding: 5px;
-  margin: 5px;
-  height: 75px;
-  overflow: hidden;
+  max-width: 720px;
+  background-color: goldenrod;
+  border-radius: 5px;
 }
 
-.project-title {
+.project-form-input {
+  width: 100%;
+}
+
+.project-form-input.title {
   font-size: 16px;
   border-bottom: 1px solid blue;
-}
-
-.project-detail {
-  font-size: 12px;
-}
-
-.row.project-form {
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin: 5% auto;
-  max-width: 720px;
-  z-index: 9;
-}
-
-.project.project-form {
-  opacity: 0.9;
-  background-color: goldenrod;
-  padding: 5px;
-  height: auto;
-}
-
-.project-title.project-form {
   border-bottom: 1px solid blue;
   margin-bottom: 5px;
-  width: 100%;
 }
 
-.project-detail.project-form {
-  width: 100%;
-}
-
-.project:hover {
-  border: 1px solid goldenrod;
-  cursor: pointer;
+.project-form-input.detail {
+  font-size: 12px;
+  resize: none;
 }

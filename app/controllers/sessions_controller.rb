@@ -10,11 +10,12 @@ class SessionsController < ApplicationController
       params[:user][:username],
       params[:user][:password]
     )
-    if @user.save
+    if @user && @user.save
       login!(@user)
       redirect_to root_url
     else
-      flash.now[:errors] = @user.errors.full_messages
+      flash.now[:errors] = ["Failed to login"]
+      @user = User.new
       render :new
     end
   end
