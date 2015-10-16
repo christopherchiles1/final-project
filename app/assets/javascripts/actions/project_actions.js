@@ -28,8 +28,8 @@
       });
     },
 
-    createProject: function (project) {
-      ApiUtil.createProject(project);
+    createProject: function (project, callback) {
+      ApiUtil.createProject(project, callback);
       // Dispatching here
       // the api callback can use receiveSingleProject action
     },

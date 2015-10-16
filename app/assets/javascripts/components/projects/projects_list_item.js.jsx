@@ -2,17 +2,10 @@
   'use strict';
 
   root.ProjectsListItem = React.createClass({
-    _togglePane: function (e) {
-      ProjectActions.updateProject({
-        id: this.props.project.id,
-        visible: !this.props.project.visible
-      });
-    },
-
     render: function () {
       return (
         <div className="projects-list-item"
-          onClick={this._togglePane}>
+          onClick={this.props.togglePane}>
             { this.props.project.title }
         </div>
       );

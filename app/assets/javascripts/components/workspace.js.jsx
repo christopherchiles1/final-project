@@ -25,15 +25,27 @@
       });
     },
 
+    _togglePane: function (e) {
+      ProjectActions.updateProject({
+        id: this.props.project.id,
+        visible: !this.props.project.visible
+      });
+    },
+
     render: function () {
       return (
-        <div className="container-fluid shift-down workspace">
+        <div className="container-fluid workspace"
+          style={{ height: "calc(" + window.innerHeight + "px - 40px)" }}>
           <div className="row">
             <div className="col-xs-2 nopadding">
-              <Sidebar projects={ this.state.projects } />
+              <Sidebar
+                projects={ this.state.projects }
+                togglePane={this._togglePane}
+                openModal={this.props.openModal} />
             </div>
             <div className="row col-xs-10 nopadding">
-              <PaneArea projects={ this.state.visibleProjects } />
+              <PaneArea projects={ this.state.visibleProjects }
+                togglePane={this._togglePane} />
             </div>
           </div>
         </div>

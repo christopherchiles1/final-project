@@ -1,3 +1,25 @@
+// New stuff
+
+.projects-list {
+  border: 3px solid yellow;
+}
+
+.projects-list-item {
+  border: 3px solid green;
+  padding: 5px;
+}
+
+.project-pane {
+  border: 1px solid grey;
+  margin: 0 2px 2px 4px;
+  float: left
+}
+
+.project-pane-header {
+  background-color: grey;
+  height: 20px;
+}
+
 // NOTE: Currently Unused
 .project {
   border: 1px solid cornflowerblue;
@@ -18,7 +40,7 @@
   font-size: 12px;
 }
 
-.row.project-new {
+.row.project-form {
   position: fixed;
   left: 0;
   right: 0;
@@ -27,20 +49,20 @@
   z-index: 9;
 }
 
-.project.project-new {
+.project.project-form {
   opacity: 0.9;
   background-color: goldenrod;
   padding: 5px;
   height: auto;
 }
 
-.project-title.project-new {
+.project-title.project-form {
   border-bottom: 1px solid blue;
   margin-bottom: 5px;
   width: 100%;
 }
 
-.project-detail.project-new {
+.project-detail.project-form {
   width: 100%;
 }
 

@@ -7,10 +7,6 @@
   margin: 0 auto;
 }
 
-.shift-down {
-  padding-top: 30px;
-}
-
 .group:after {
   content: " ";
   display: block;
@@ -22,39 +18,30 @@
    margin: 0 !important;
 }
 
+.app {
+  height: 100%;
+}
+
 .navbar-div {
-  position: fixed;
   height: 40px;
   width: 100%;
-  border: 3px solid red;
+  background-color: cornflowerblue;
+  z-index: 10;
 }
 
 .workspace {
-  border: 3px solid magenta;
+  background-color: darkgrey;
 }
 
 .sidebar {
-  height: 100%;
   border: 3px solid orange;
 }
 
-.projects-list {
-  border: 3px solid yellow;
-}
-
-.projects-list-item {
-  border: 3px solid green;
-  padding: 5px;
-}
-
 .pane-area {
-  border: 3px solid blue;
+  position: relative;
 }
 
-.project-pane {
-  border: 3px solid goldenrod;
-}
-
-.project-pane-header {
-
+.tasks-list {
+  height: 100px;
+  border: 3px solid cyan;
 }
