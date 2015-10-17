@@ -17,4 +17,5 @@ class Project < ActiveRecord::Base
   validates :description, length: { minimum: 0 }
 
   belongs_to :user
+  has_many :tasks, dependent: :destroy
 end
