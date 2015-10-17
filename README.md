@@ -13,11 +13,10 @@ Life Tracker allows users to:
 
 - [ ] Create an account
 - [ ] Log in and out
-- [ ] View a dashboard of all projects
-- [ ] Manage a project using the project's workspace
-- [ ] Create, view, edit, and delete projects, tasks, and todos
-- [ ] Search for tasks
-- [ ] Tag tasks and search tasks by tag
+- [ ] Create, view, edit, and delete projects
+- [ ] Toggle which project panes are open in the workspace
+- [ ] Create, view, edit, and delete tasks and todos within each project
+- [ ] Search for tasks through all projects
 
 ## Design Docs
 * [View Wireframes][view]
@@ -44,18 +43,17 @@ I will start by developing the Flux architecture for Projects, including the
 Flux Dispatcher and Project Actions, Constants, ApiUtil methods, and Store. Then
 I will create React views for the ProjectsIndex, ProjectsIndexItem, and
 ProjectsForm. At the end of Phase 2, Projects can be created, viewed, edited and
-destroyed from the Dashboard.
+destroyed from the Workspace. I will also add a Sidebar which will switch out
+the panes displayed.
 
 [Details][phase-two]
 
 ### Phase 3: The Project Workspace and Tasks (1.5 days)
 
 Phase 3 focuses on developing the project workspace. I will implement Tasks
-which can be added to a Project and given a planned, started, and completed
-status. I will implement React views for Tasks so that they can be created and
-manipulated from a projects workspace. I will also add a Sidebar which will
-switch out the panes displayed. Finally, I will add a SearchForm and SearchIndex
-component for searching a projects tasks.
+which can be added to a Project. I will implement React views for Tasks so that
+they can be created and manipulated within a project pane.  Finally, I will add
+a SearchForm and SearchPane component for searching through tasks.
 
 [Details][phase-three]
 
