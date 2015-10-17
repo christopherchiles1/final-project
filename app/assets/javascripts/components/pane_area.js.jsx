@@ -4,7 +4,7 @@
   root.PaneArea = React.createClass({
     render: function () {
       return (
-        <div className="pane-area tall group">
+        <div className="pane-area tall">
           {
             this.props.projects.map(function (project) {
               return (
@@ -12,7 +12,6 @@
                   key={ project.id }
                   project={ project }
                   togglePane={ this.props.togglePane }
-                  count={ this.props.projects.length }
                   openProjectForm={ this.props.openProjectForm }/>
                );
             }.bind(this))

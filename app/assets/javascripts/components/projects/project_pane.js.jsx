@@ -23,7 +23,7 @@
             <div className="project-pane-header options btn-group"
               role="group">
               <button onClick={this.handleOpenProjectForm}>
-                <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                <span className="glyphicon glyphicon-pencil transparent" aria-hidden="true"></span>
               </button>
               <button onClick={this.handleTogglePane}>
                 <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
