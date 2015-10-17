@@ -8,7 +8,7 @@
 
     render: function () {
       return (
-        <div className="navbar-div">
+        <div className="navbar-div shadowed">
         </div>
       );
     }

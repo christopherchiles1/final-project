@@ -9,10 +9,10 @@
 }
 
 .project-pane {
+  min-width: 200px;
+  flex-grow: 1;
   border: 1px solid grey;
   margin: 0 2px 2px 4px;
-  float: left;
-  height: calc(100% - 5px);
 }
 
 .project-pane-header {
@@ -39,6 +39,7 @@
 
 .project-form.delete {
   background-color: lightpink;
+  text-align: center;
 }
 
 .project-form-input {

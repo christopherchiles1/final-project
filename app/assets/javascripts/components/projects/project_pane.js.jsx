@@ -15,8 +15,7 @@
     render: function () {
       var percent = 100 / this.props.count;
       return (
-        <div className="project-pane shadowed"
-          style={{ width: "calc(" + percent + "% - 6px)" }}>
+        <div className="project-pane shadowed">
           <div className="project-pane-header group">
             <div className="project-pane-header title truncated">
               {this.props.project.title}
