@@ -7,7 +7,6 @@ id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 description | text      | not null
-ord         | integer   | not null
 
 ## tasks
 column name | data type | details

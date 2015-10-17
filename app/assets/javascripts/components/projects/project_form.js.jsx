@@ -25,8 +25,7 @@
       e.preventDefault();
       var project = {
         title: this.state.title,
-        description: this.state.description,
-        ord: 1 // NOTE: Change this later
+        description: this.state.description
       };
 
       var callback = function () { this.props.closeProjectForm(); }.bind(this);

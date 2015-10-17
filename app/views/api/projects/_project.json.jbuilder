@@ -1,4 +1,4 @@
 json.extract!(
   project,
-  :id, :user_id, :title, :description, :ord, :visible, :created_at
+  :id, :user_id, :title, :description, :visible, :created_at
 )
