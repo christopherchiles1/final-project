@@ -34,6 +34,12 @@
       return _tasks.slice();
     },
 
+    findByProject: function (project) {
+      _tasks.filter(function (task) {
+        return task.project_id === project.id;
+      });
+    },
+
     addTaskChangeListener: function (callback) {
       this.addListener(TASK_CHANGE_EVENT, callback);
     },

@@ -31,7 +31,14 @@
             </div>
           </div>
           <div className="tasks-list">
-            No content to display!
+            {
+              this.props.tasks.map(function (project) {
+                return (
+                  <TasksListItem
+                    task={this.props.task}/>
+                 );
+              }.bind(this))
+            }
           </div>
         </div>
       );
