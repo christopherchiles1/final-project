@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :projects
+  has_many :tasks, through: :projects
+  has_many :todos, through: :tasks
 
   def password=(password)
     @password = password

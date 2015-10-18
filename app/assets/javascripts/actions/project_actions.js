@@ -16,8 +16,8 @@
       });
     },
 
-    fetchSingleProject: function (id) {
-      ProjectUtil.fetchSingleProject(id);
+    fetchSingleProject: function (project) {
+      ProjectUtil.fetchSingleProject(project);
       // Dispatching here
     },
 
