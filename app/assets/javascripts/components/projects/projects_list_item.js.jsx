@@ -16,7 +16,7 @@
 
     handleOpenProjectDelete: function (e) {
       this.props.openProjectDelete.call(null, this.props.project);
-      e.stopPropagation();
+      e.stopPropogation();
     },
 
     handleTogglePane: function (e) {

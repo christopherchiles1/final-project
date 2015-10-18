@@ -1,1 +1,1 @@
-json.partial!('project', project: @project, show_tasks: true)
+json.partial!('project', project: @project)

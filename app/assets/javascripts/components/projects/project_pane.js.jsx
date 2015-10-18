@@ -31,14 +31,7 @@
             </div>
           </div>
           <div className="tasks-list">
-            {
-              this.props.tasks.map(function (project) {
-                return (
-                  <TasksListItem
-                    task={this.props.task}/>
-                 );
-              }.bind(this))
-            }
+            No content to display!
           </div>
         </div>
       );

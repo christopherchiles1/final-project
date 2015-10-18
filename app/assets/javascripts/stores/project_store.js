@@ -9,7 +9,7 @@
     _projects = projects;
   };
 
-  var _updateProject = function (project) {
+  var _resetProject = function (project) {
     var updateProject = _projects.find(function (p) {
       return p.id === project.id;
     });
@@ -55,7 +55,7 @@
           ProjectStore.emit(PROJECT_CHANGE_EVENT);
           break;
         case ProjectConstants.PROJECT_RECEIVED:
-          _updateProject(payload.project);
+          _resetProject(payload.project);
           ProjectStore.emit(PROJECT_CHANGE_EVENT);
           break;
         case ProjectConstants.PROJECT_REMOVED:
