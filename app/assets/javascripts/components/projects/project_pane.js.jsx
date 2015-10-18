@@ -2,6 +2,27 @@
   'use strict';
 
   root.ProjectPane = React.createClass({
+    getInitialState: function () {
+      return {
+        tasks: TaskStore.findByProject(this.props.project)
+      };
+    },
+
+    componentDidMount: function () {
+      TaskStore.addTaskChangeListener(this._onChange);
+      TaskActions.fetchTasksbyProject(this.props.project);
+    },
+
+    componentWillUnmount: function () {
+      TaskStore.removeTaskChangeListener(this._onChange);
+    },
+
+    _onChange: function () {
+      this.setState({
+        tasks: TaskStore.findByProject(this.props.project)
+      });
+    },
+
     handleOpenProjectForm: function (e) {
       e.preventDefault();
       this.props.openProjectForm.call(null, this.props.project);
@@ -32,10 +53,10 @@
           </div>
           <div className="tasks-list">
             {
-              this.props.tasks.map(function (project) {
+              this.state.tasks.map(function (task) {
                 return (
                   <TasksListItem
-                    task={this.props.task}/>
+                    task={task}/>
                  );
               }.bind(this))
             }

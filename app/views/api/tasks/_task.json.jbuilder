@@ -1,4 +1,4 @@
 json.extract!(
-  project,
+  task,
   :id, :project_id, :title, :description, :deadline
 )

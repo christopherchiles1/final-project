@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
-    resources :projects, except: [:new, :edit]
-    resources :tasks, except: [:new, :edit]
-    resources :todos, except: [:new, :edit]
+    resources :projects, except: [:new, :edit] do
+      resources :tasks, except: [:new, :edit] do
+        resources :todos, except: [:new, :edit]
+      end
+    end
   end
 end

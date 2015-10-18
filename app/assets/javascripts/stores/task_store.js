@@ -3,7 +3,7 @@
 
   var TASK_CHANGE_EVENT = "TASK_CHANGE_EVENT";
 
-  var _tasks = [];
+  var _tasks = {};
 
   var _resetTasks = function (tasks) {
     _tasks = tasks;
@@ -35,9 +35,7 @@
     },
 
     findByProject: function (project) {
-      _tasks.filter(function (task) {
-        return task.project_id === project.id;
-      });
+      return _tasks[project.id].slice();
     },
 
     addTaskChangeListener: function (callback) {

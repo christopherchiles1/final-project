@@ -4,8 +4,7 @@
   root.Workspace = React.createClass({
     getInitialState: function () {
       return {
-        projects: ProjectStore.all(),
-        visibleProjects: ProjectStore.visibleProjects()
+        projects: ProjectStore.all()
       };
     },
 
@@ -20,8 +19,7 @@
 
     _onChange: function () {
       this.setState({
-        projects: ProjectStore.all(),
-        visibleProjects: ProjectStore.visibleProjects()
+        projects: ProjectStore.all()
       });
     },
 
@@ -29,6 +27,12 @@
       ProjectActions.updateProject({
         id: project.id,
         visible: !project.visible
+      });
+    },
+
+    _visibleProjects:function () {
+      return this.state.projects.filter(function (project) {
+        return project.visible;
       });
     },
 
@@ -44,7 +48,7 @@
                 openProjectDelete={this.props.openProjectDelete} />
             </div>
             <div className="col-xs-10 tall nopadding">
-              <PaneArea projects={ this.state.visibleProjects }
+              <PaneArea projects={ this._visibleProjects() }
                 togglePane={this._togglePane}
                 openProjectForm={this.props.openProjectForm} />
             </div>
