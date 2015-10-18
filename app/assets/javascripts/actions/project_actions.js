@@ -3,7 +3,7 @@
 
   root.ProjectActions = {
     fetchAllProjects: function () {
-      ApiUtil.fetchAllProjects();
+      ProjectUtil.fetchAllProjects();
       // Dispatch an action to change view asynchronously here
       // On fetch success, receiveAllProjects will run and change view again
       // On fetch fail, another event will run to fix the asynch view change
@@ -17,7 +17,7 @@
     },
 
     fetchSingleProject: function (id) {
-      ApiUtil.fetchSingleProject(id);
+      ProjectUtil.fetchSingleProject(id);
       // Dispatching here
     },
 
@@ -29,19 +29,19 @@
     },
 
     createProject: function (project, callback) {
-      ApiUtil.createProject(project, callback);
+      ProjectUtil.createProject(project, callback);
       // Dispatching here
       // the api callback can use receiveSingleProject action
     },
 
     updateProject: function (project, callback) {
-      ApiUtil.updateProject(project, callback);
+      ProjectUtil.updateProject(project, callback);
       // Dispatching here
       // api callback can use receiveSingleProject action
     },
 
     deleteProject: function (project, callback) {
-      ApiUtil.deleteProject(project, callback);
+      ProjectUtil.deleteProject(project, callback);
       // Dispatching here
     },
 
