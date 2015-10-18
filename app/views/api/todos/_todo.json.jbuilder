@@ -1,4 +1,4 @@
 json.extract!(
-  project,
+  todo,
   :id, :task_id, :completed, :body
 )
