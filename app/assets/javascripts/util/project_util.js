@@ -14,9 +14,9 @@
       });
     },
 
-    fetchProject: function (id) {
+    fetchProject: function (project) {
       $.ajax({
-        url: '/api/projects/' + id,
+        url: '/api/projects/' + project.id,
         success: function (project) {
           ProjectActions.receiveProject(project);
         },
@@ -41,9 +41,9 @@
       });
     },
 
-    updateProject: function (id, callback) {
+    updateProject: function (project, callback) {
       $.ajax({
-        url: 'api/projects/' + id,
+        url: 'api/projects/' + project.id,
         type: 'PATCH',
         data: { project: project },
         success: function (project) {
@@ -56,9 +56,9 @@
       });
     },
 
-    deleteProject: function (id, callback) {
+    deleteProject: function (project, callback) {
       $.ajax({
-        url: 'api/projects/' + id,
+        url: 'api/projects/' + project.id,
         type: 'DELETE',
         success: function () {
           ProjectActions.removeSingleProject(project);

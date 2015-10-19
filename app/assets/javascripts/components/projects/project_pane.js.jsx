@@ -10,7 +10,7 @@
 
     componentDidMount: function () {
       TaskStore.addTaskChangeListener(this._onChange);
-      TaskActions.fetchAllTasks(this.props.project);
+      TaskActions.fetchProjectTasks(this.props.project);
     },
 
     componentWillUnmount: function () {

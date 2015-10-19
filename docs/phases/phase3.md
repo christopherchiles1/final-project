@@ -25,13 +25,13 @@
 * Task
 
 ### Actions
-* ApiActions.receiveAllTasks
-* ApiActions.receiveSingleTask
+* ApiActions.receiveProjectTasks
+* ApiActions.receiveTask
 * ApiActions.deleteTask
 
 ### ApiUtil
-* ApiUtil.fetchAllTasks
-* ApiUtil.fetchSingleTask
+* ApiUtil.fetchProjectTasks
+* ApiUtil.fetchTask
 * ApiUtil.createTask
 * ApiUtil.editTask
 * ApiUtil.destroyTask

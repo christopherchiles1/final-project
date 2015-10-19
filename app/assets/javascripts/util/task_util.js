@@ -2,21 +2,26 @@
   'use strict';
 
   root.TaskUtil = {
-    // Grabs all tasks for a project, returns project and tasks
-    fetchAllTasks: function (project) {
+    fetchProjectTasks: function (project) {
       $.ajax({
         url: '/api/projects/' + project.id + '/tasks',
         success: function (tasks) {
-          TaskActions.receiveAllTasks(project, tasks);
+          TaskActions.receiveProjectTasks(project, tasks);
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
 
-    fetchSingleTask: function (task) {
+    fetchTask: function (task) {
       $.ajax({
-        url: '/api/projects/' + task.project_id + '/tasks/' + task.id,
+        url: '/api/tasks/' + task.id,
         success: function (task) {
-          TaskActions.receiveSingleTask(task);
+          TaskActions.receiveTask(task);
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
@@ -27,31 +32,40 @@
         type: 'POST',
         data: { task: task },
         success: function (task) {
-          TaskActions.receiveSingleTask(task);
+          TaskActions.receiveTask(task);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
 
     updateTask: function (task, callback) {
       $.ajax({
-        url: 'api/projects/' + task.project_id + '/tasks/' + task.id,
+        url: 'api/tasks/' + task.id,
         type: 'PATCH',
         data: { task: task },
         success: function (task) {
-          TaskActions.receiveSingleTask(task);
+          TaskActions.receiveTask(task);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
 
     deleteTask: function (task, callback) {
       $.ajax({
-        url: 'api/projects/' + task.project_id + '/tasks/' + task.id,
+        url: 'api/tasks/' + task.id,
         type: 'DELETE',
         success: function () {
-          TaskActions.removeSingleTask(task);
+          TaskActions.removeTask(task);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     }
