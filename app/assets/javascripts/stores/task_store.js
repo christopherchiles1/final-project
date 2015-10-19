@@ -5,36 +5,32 @@
 
   var _tasks = {};
 
-  var _resetTasks = function (tasks) {
-    _tasks = tasks;
+  var _resetTasks = function (project, tasks) {
+    _tasks[project.id] = tasks;
   };
 
   var _updateTask = function (task) {
-    var updateTask = _tasks.find(function (t) {
+    var updateTask = _tasks[task.project_id].find(function (t) {
       return t.id === task.id;
     });
     if (updateTask) {
-      _tasks.splice(_tasks.indexOf(updateTask), 1, task);
+      _tasks[task.project_id].splice(_tasks.indexOf(updateTask), 1, task);
     } else {
-      _tasks.push(task);
+      _tasks[task.project_id].push(task);
     }
   };
 
   var _removeTask = function (task) {
-    var removeTask = _tasks.find(function (t) {
+    var removeTask = _tasks[task.project_id].find(function (t) {
       return t.id === task.id;
     });
     if (removeTask) {
-      _tasks.splice(_tasks.indexOf(removeTask), 1);
+      _tasks[task.project_id].splice(_tasks[task.project_id].indexOf(removeTask), 1);
     }
   };
 
   root.TaskStore = $.extend({}, EventEmitter.prototype, {
-    all: function () {
-      return _tasks.slice();
-    },
-
-    findByProject: function (project) {
+    projectTasks: function (project) {
       return _tasks[project.id].slice();
     },
 
@@ -49,7 +45,7 @@
     dispatcherID: AppDispatcher.register(function (payload) {
       switch(payload.actionType) {
         case TaskConstants.TASKS_RECEIVED:
-          _resetTasks(payload.tasks);
+          _resetTasks(payload.project, payload.tasks);
           TaskStore.emit(TASK_CHANGE_EVENT);
           break;
         case TaskConstants.TASK_RECEIVED:

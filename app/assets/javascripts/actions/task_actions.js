@@ -2,14 +2,15 @@
   'use strict';
 
   root.TaskActions = {
-    fetchAllTasks: function () {
-      TaskUtil.fetchAllTasks();
+    fetchAllTasks: function (project) {
+      TaskUtil.fetchAllTasks(project);
       // Dispatch an action to change view asynchronously here
     },
 
-    receiveAllTasks: function (tasks) {
+    receiveAllTasks: function (project, tasks) {
       AppDispatcher.dispatch({
         actionType: TaskConstants.TASKS_RECEIVED,
+        project: project,
         tasks: tasks
       });
     },
