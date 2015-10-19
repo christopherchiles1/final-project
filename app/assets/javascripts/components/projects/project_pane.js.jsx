@@ -4,13 +4,13 @@
   root.ProjectPane = React.createClass({
     getInitialState: function () {
       return {
-        tasks: TaskStore.findByProject(this.props.project)
+        tasks: TaskStore.projectTasks(this.props.project)
       };
     },
 
     componentDidMount: function () {
       TaskStore.addTaskChangeListener(this._onChange);
-      TaskActions.fetchTasksbyProject(this.props.project);
+      TaskActions.fetchAllTasks(this.props.project);
     },
 
     componentWillUnmount: function () {
@@ -19,7 +19,7 @@
 
     _onChange: function () {
       this.setState({
-        tasks: TaskStore.findByProject(this.props.project)
+        tasks: TaskStore.projectTasks(this.props.project)
       });
     },
 
@@ -34,7 +34,19 @@
     },
 
     render: function () {
-      var percent = 100 / this.props.count;
+      var taskList;
+      if (this.state.tasks) {
+        taskList = this.state.tasks.map(function (task) {
+          return (
+            <TasksListItem
+              key={task.id}
+              task={task}/>
+           );
+        }.bind(this));
+      } else {
+        taskList = <div className="tasks-list empty"></div>;
+      }
+
       return (
         <div className="project-pane shadowed">
           <div className="project-pane-header group">
@@ -53,12 +65,7 @@
           </div>
           <div className="tasks-list">
             {
-              this.state.tasks.map(function (task) {
-                return (
-                  <TasksListItem
-                    task={task}/>
-                 );
-              }.bind(this))
+              taskList
             }
           </div>
         </div>

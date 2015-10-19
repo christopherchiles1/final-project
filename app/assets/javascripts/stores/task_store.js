@@ -30,8 +30,12 @@
   };
 
   root.TaskStore = $.extend({}, EventEmitter.prototype, {
+    all: function () {
+      return _tasks;
+    },
+
     projectTasks: function (project) {
-      return _tasks[project.id].slice();
+      return _tasks[project.id] && _tasks[project.id].slice();
     },
 
     addTaskChangeListener: function (callback) {

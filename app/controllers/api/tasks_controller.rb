@@ -10,7 +10,7 @@ class Api::TasksController < ApplicationController
   end
 
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.projects.find(params[:project_id]).tasks
     render json: @tasks
   end
 
