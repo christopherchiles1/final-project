@@ -14,19 +14,10 @@
             onClick={this.newProject}>
             New Project
           </button>
-          <div className="projects-list">
-            {
-              this.props.projects.map(function (project) {
-                return (
-                  <ProjectsListItem
-                    key={project.id}
-                    project={project}
-                    togglePane={this.props.togglePane}
-                    openModal={this.props.openModal} />
-                 );
-              }.bind(this))
-            }
-          </div>
+          <ProjectsList
+            projects={this.props.projects}
+            togglePane={this.props.togglePane}
+            openModal={this.props.openModal} />
         </div>
       );
     }

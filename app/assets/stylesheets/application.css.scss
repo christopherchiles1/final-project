@@ -21,10 +21,14 @@ html, body, #content {
 }
 
 .sidebar {
+  float: left;
   background-color: #454745;
+  width: 125px;
 }
 
 .pane-area {
+  float: right;
+  width: calc(100% - 125px);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -50,10 +54,10 @@ html, body, #content {
   height: 100%;
 }
 
-.nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
-}
+// .nopadding {
+//    padding: 0 !important;
+//    margin: 0 !important;
+// }
 
 .shadowed {
   box-shadow: 1px 1px 3px black;
