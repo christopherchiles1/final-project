@@ -4,7 +4,7 @@
   root.Sidebar = React.createClass({
     newProject: function (e) {
       e.preventDefault();
-      this.props.openProjectForm();
+      this.props.openModal.call(null, ProjectModal);
     },
 
     render: function () {
@@ -22,7 +22,7 @@
                     key={project.id}
                     project={project}
                     togglePane={this.props.togglePane}
-                    openProjectDelete={this.props.openProjectDelete} />
+                    openModal={this.props.openModal} />
                  );
               }.bind(this))
             }

@@ -14,8 +14,8 @@
       this.setState({deletable: false});
     },
 
-    handleOpenProjectDelete: function (e) {
-      this.props.openProjectDelete.call(null, this.props.project);
+    deleteProject: function (e) {
+      this.props.openModal.call(null, ProjectDelete, this.props.project);
       e.stopPropagation();
     },
 
@@ -30,7 +30,7 @@
         deleteButton =
           <span className="glyphicon glyphicon-trash pull-right"
             aria-hidden="true"
-            onClick={this.handleOpenProjectDelete}></span>;
+            onClick={this.deleteProject}></span>;
       }
 
       return (

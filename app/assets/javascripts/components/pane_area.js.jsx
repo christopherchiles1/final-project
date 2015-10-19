@@ -12,7 +12,7 @@
                   key={ project.id }
                   project={ project }
                   togglePane={ this.props.togglePane }
-                  openProjectForm={ this.props.openProjectForm }/>
+                  openModal={ this.props.openModal }/>
                );
             }.bind(this))
           }

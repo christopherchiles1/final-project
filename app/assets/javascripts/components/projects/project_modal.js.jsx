@@ -1,14 +1,14 @@
 (function(root) {
   'use strict';
 
-  root.ProjectForm = React.createClass({
+  root.ProjectModal = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
-      if (this.props.project) {
+      if (this.props.data) {
         return {
-          title: this.props.project.title,
-          description: this.props.project.description
+          title: this.props.data.title,
+          description: this.props.data.description
         };
       } else {
         return {
@@ -28,7 +28,7 @@
         description: this.state.description
       };
 
-      var callback = function () { this.props.closeProjectForm(); }.bind(this);
+      var callback = function () { this.props.closeModal(); }.bind(this);
 
       ProjectActions.createProject(project, callback);
     },
@@ -41,22 +41,21 @@
         description: this.state.description
       };
 
-      var callback = function () { this.props.closeProjectForm(); }.bind(this);
+      var callback = function () { this.props.closeModal(); }.bind(this);
       ProjectActions.updateProject(project, callback);
     },
 
-    handleCloseProjectForm: function (e) {
-      // debugger;
-      // e.preventDefault();
+    closeForm: function (e) {
+      e.preventDefault();
       if (e.currentTarget === e.target) {
-        this.props.closeProjectForm();
+        this.props.closeModal();
       }
     },
 
     render: function () {
       var callback;
       var text;
-      if (this.props.project) {
+      if (this.props.data) {
         callback = this._updateProject;
         text = "Update Project";
       } else {
@@ -66,7 +65,7 @@
       return (
         <div>
           <div className="modal-bg"
-            onClick={this.handleCloseProjectForm} >
+            onClick={this.closeForm} >
           </div>
           <form className="project-form modal-fg"
             onSubmit={callback}>
@@ -87,7 +86,7 @@
             </div>
             <button className="btn btn-primary pull-right">{text}</button>
             <button className="btn btn-link"
-              onClick={this.handleCloseProjectForm}>Cancel</button>
+              onClick={this.closeForm}>Cancel</button>
           </form>
         </div>
       );

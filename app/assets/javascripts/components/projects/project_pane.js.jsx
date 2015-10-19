@@ -23,9 +23,9 @@
       });
     },
 
-    handleOpenProjectForm: function (e) {
+    editProject: function (e) {
       e.preventDefault();
-      this.props.openProjectForm.call(null, this.props.project);
+      this.props.openModal.call(null, ProjectModal, this.props.project);
     },
 
     handleTogglePane: function (e) {
@@ -55,7 +55,7 @@
             </div>
             <div className="project-pane-header options btn-group"
               role="group">
-              <button onClick={this.handleOpenProjectForm}>
+              <button onClick={this.editProject}>
                 <span className="glyphicon glyphicon-pencil transparent" aria-hidden="true"></span>
               </button>
               <button onClick={this.handleTogglePane}>
@@ -64,9 +64,7 @@
             </div>
           </div>
           <div className="tasks-list">
-            {
-              taskList
-            }
+            {taskList}
           </div>
         </div>
       );

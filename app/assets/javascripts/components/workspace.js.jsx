@@ -44,13 +44,12 @@
               <Sidebar
                 projects={ this.state.projects }
                 togglePane={this._togglePane}
-                openProjectForm={this.props.openProjectForm}
-                openProjectDelete={this.props.openProjectDelete} />
+                openModal={this.props.openModal} />
             </div>
             <div className="col-xs-10 tall nopadding">
               <PaneArea projects={ this._visibleProjects() }
                 togglePane={this._togglePane}
-                openProjectForm={this.props.openProjectForm} />
+                openModal={this.props.openModal} />
             </div>
           </div>
         </div>
