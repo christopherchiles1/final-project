@@ -10,7 +10,7 @@
 
     componentDidMount: function () {
       ProjectStore.addProjectChangeListener(this._onChange);
-      ProjectActions.fetchAllProjects();
+      ProjectActions.fetchUserProjects();
     },
 
     componentWillUnmount: function () {

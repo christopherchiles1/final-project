@@ -3,25 +3,35 @@
 
   var CHANGE_EVENT = "CHANGE_EVENT";
 
-  var _projects = {};
+  var _projects = [];
 
   var _resetProjects = function (projects) {
-    projects.forEach(function (project) {
-      _projects[project.id] = project;
-    });
+    _projects = projects;
   };
 
   var _updateProject = function (project) {
-    _projects[project.id] = project;
+    var updateProject = _projects.find(function (p) {
+      return p.id === project.id;
+    });
+    if (updateProject) {
+      _projects.splice(_projects.indexOf(updateProject), 1, project);
+    } else {
+      _projects.push(project);
+    }
   };
 
   var _removeProject = function (project) {
-    delete _projects[project.id];
+    var removeProject = _projects.find(function (p) {
+      return p.id === project.id;
+    });
+    if (removeProject) {
+      _projects.splice(_projects.indexOf(removeProject), 1);
+    }
   };
 
   root.ProjectStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
-      return _projects;
+      return _projects.slice();
     },
 
     addProjectChangeListener: function (callback) {

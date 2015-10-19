@@ -18,13 +18,13 @@
 * Project
 
 ### Actions
-* ApiActions.receiveAllProjects
-* ApiActions.receiveSingleProject
+* ApiActions.receiveUserProjects
+* ApiActions.receiveProject
 * ApiActions.deleteProject
 
 ### ApiUtil
-* ApiUtil.fetchAllProjects
-* ApiUtil.fetchSingleProject
+* ApiUtil.fetchUserProjects
+* ApiUtil.fetchProject
 * ApiUtil.createProject
 * ApiUtil.editProject
 * ApiUtil.destroyProject

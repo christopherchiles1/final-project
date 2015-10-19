@@ -6,7 +6,7 @@
       $.ajax({
         url: '/api/projects',
         success: function (projects) {
-          ProjectActions.receiveAllProjects(projects);
+          ProjectActions.receiveUserProjects(projects);
         },
         error: function (error) {
           alert(error);
@@ -18,7 +18,7 @@
       $.ajax({
         url: '/api/projects/' + id,
         success: function (project) {
-          ProjectActions.receiveSingleProject(project);
+          ProjectActions.receiveProject(project);
         },
         error: function (error) {
           alert(error);
