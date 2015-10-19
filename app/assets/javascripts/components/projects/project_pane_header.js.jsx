@@ -15,17 +15,14 @@
     render: function () {
       return (
         <div className="project-pane-header group">
+          <div className="option-left" onClick={this.handleTogglePane}>
+            <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </div>
           <div className="project-pane-header title truncated">
             {this.props.project.title}
           </div>
-          <div className="project-pane-header options btn-group"
-            role="group">
-            <button onClick={this.editProject}>
-              <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-            </button>
-            <button onClick={this.handleTogglePane}>
-              <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
-            </button>
+          <div className="option-right" onClick={this.editProject}>
+            <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
           </div>
         </div>
       );

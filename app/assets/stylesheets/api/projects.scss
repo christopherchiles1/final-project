@@ -18,11 +18,16 @@
 .project-pane-header {
   position: relative;
   background-color: grey;
+  height: 30px;
+  padding: 5px;
 }
 
 .project-pane-header.title {
   float: left;
-  width: calc(100% - 89px);
+  height: 20px;
+  padding: 0;
+  width: calc(100% - 50px);
+  text-align: center;
 }
 
 .project-pane-header.options {

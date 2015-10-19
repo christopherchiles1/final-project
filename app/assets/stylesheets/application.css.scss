@@ -30,7 +30,19 @@ html, body, #content {
   overflow-x: auto;
 }
 
-// css util classes
+.option-left {
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+
+.option-right {
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+
+// CSS Util classes
 
 .group:after {
   content: " ";
