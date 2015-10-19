@@ -1,0 +1,71 @@
+.navbar.custom {
+  margin: 0;
+  background-color: #454751;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0px 1px 5px black;
+  z-index: 100;
+  min-height: 40px;
+  height: 40px;
+}
+
+.container-fluid.custom {
+  height: 100%;
+}
+
+.navbar-toggle.custom {
+  height: 36px;
+  margin: 2px;
+}
+
+.navbar-collapse.custom {
+  max-height: 40px;
+}
+
+.navbar-nav.custom {
+  height: 40px;
+}
+
+.dropdown.custom {
+  margin: 0;
+  height: 40px;
+  padding: 0;
+}
+
+.dropdown.custom > a {
+  height: 40px;
+  padding: auto;
+}
+
+.navbar-form.custom {
+  margin: 0;
+  padding: 4px;
+  height: 36px;
+}
+
+.form-group.custom {
+  background: rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
+  border-radius: 3px;
+}
+
+.form-group.custom input {
+  padding: 5px;
+  float: left;
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.form-group.custom input:focus {
+  outline: 0;
+}
+
+.form-group.custom button {
+  float: right;
+  height: 100%;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0 3px 3px 0;
+  background: rgba(0, 0, 0, 0);
+}

@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'modals';
+@import 'navbar';
 @import 'api/projects';
 @import 'api/tasks';
 
@@ -10,13 +11,8 @@ html, body, #content {
 
 * {
   color: white;
-}
-
-.navbar-div {
-  height: 39px;
-  width: 100%;
-  background-color: #454751;
-  border-bottom: 1px solid black;
+  font-weight: 100;
+  letter-spacing: 0.1em;
 }
 
 .workspace {
