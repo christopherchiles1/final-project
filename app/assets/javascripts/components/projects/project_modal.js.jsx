@@ -36,7 +36,7 @@
     _updateProject: function (e) {
       e.preventDefault();
       var project = {
-        id: this.props.project.id,
+        id: this.props.data.id,
         title: this.state.title,
         description: this.state.description
       };
