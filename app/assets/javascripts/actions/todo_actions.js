@@ -2,12 +2,12 @@
   'use strict';
 
   root.TodoActions = {
-    fetchAllTodos: function () {
-      TodoUtil.fetchAllTodos();
+    fetchAllTodos: function (task) {
+      TodoUtil.fetchAllTodos(task);
       // Dispatch an action to change view asynchronously here
     },
 
-    receiveAllTodos: function (todos) {
+    receiveAllTodos: function (task, todos) {
       AppDispatcher.dispatch({
         actionType: TodoConstants.TODOS_RECEIVED,
         todos: todos

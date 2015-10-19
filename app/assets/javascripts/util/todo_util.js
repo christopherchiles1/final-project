@@ -2,11 +2,11 @@
   'use strict';
 
   root.TodoUtil = {
-    fetchAllTodos: function () {
+    fetchAllTodos: function (task) {
       $.ajax({
-        url: '/api/todos',
+        url: '/api/tasks/' + task.id + '/todos',
         success: function (todos) {
-          TodoActions.receiveAllTodos(todos);
+          TodoActions.receiveAllTodos(task, todos);
         }
       });
     },

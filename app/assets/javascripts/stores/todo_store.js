@@ -3,10 +3,10 @@
 
   var TODO_CHANGE_EVENT = "TODO_CHANGE_EVENT";
 
-  var _todos = [];
+  var _todos = {};
 
-  var _resetTodos = function (todos) {
-    _todos = todos;
+  var _resetTodos = function (task, todos) {
+    _todos[task.id] = todos;
   };
 
   var _updateTodo = function (todo) {
@@ -30,8 +30,8 @@
   };
 
   root.TodoStore = $.extend({}, EventEmitter.prototype, {
-    all: function () {
-      return _todos.slice();
+    taskTodos: function (task) {
+      return _todos[task.id] && _todos[task.id].slice();
     },
 
     addTodoChangeListener: function (callback) {
@@ -45,7 +45,7 @@
     dispatcherID: AppDispatcher.register(function (payload) {
       switch(payload.actionType) {
         case TodoConstants.TODOS_RECEIVED:
-          _resetTodos(payload.todos);
+          _resetTodos(payload.task, payload.todos);
           TodoStore.emit(TODO_CHANGE_EVENT);
           break;
         case TodoConstants.TODO_RECEIVED:

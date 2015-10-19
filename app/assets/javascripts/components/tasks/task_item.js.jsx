@@ -4,8 +4,11 @@
   root.TaskItem = React.createClass({
     render: function () {
       return (
-        <div className="task-item truncated">
-            { this.props.task.title }
+        <div className="task-item truncated hover-options">
+          { this.props.task.title }
+          <span className="glyphicon glyphicon-chevron-down pull-right hover-option"
+            aria-hidden="true"
+            onClick={this.detailView}></span>
         </div>
       );
     }
