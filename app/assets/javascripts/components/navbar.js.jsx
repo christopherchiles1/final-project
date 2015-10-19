@@ -11,7 +11,8 @@
         <nav className="navbar navbar-inverse custom">
           <div className="container-fluid custom">
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed custom" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+              <button type="button" className="navbar-toggle collapsed custom"
+                data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                 <span className="glyphicon glyphicon-chevron-down"></span>
               </button>
               <img src="/assets/logo(small).png" />
@@ -28,7 +29,7 @@
                     <span className="caret"></span>
                   </a>
                   <ul className="dropdown-menu">
-                    <li><a href="#">Sign Out</a></li>
+                    <li><a href="#">Log out</a></li>
                   </ul>
                 </li>
               </ul>
