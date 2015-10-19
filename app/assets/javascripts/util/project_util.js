@@ -2,20 +2,26 @@
   'use strict';
 
   root.ProjectUtil = {
-    fetchAllProjects: function () {
+    fetchUserProjects: function () {
       $.ajax({
         url: '/api/projects',
         success: function (projects) {
           ProjectActions.receiveAllProjects(projects);
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
 
-    fetchSingleProject: function (project) {
+    fetchProject: function (id) {
       $.ajax({
-        url: '/api/projects/' + project.id,
+        url: '/api/projects/' + id,
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
@@ -28,29 +34,38 @@
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
 
-    updateProject: function (project, callback) {
+    updateProject: function (id, callback) {
       $.ajax({
-        url: 'api/projects/' + project.id,
+        url: 'api/projects/' + id,
         type: 'PATCH',
         data: { project: project },
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     },
 
-    deleteProject: function (project, callback) {
+    deleteProject: function (id, callback) {
       $.ajax({
-        url: 'api/projects/' + project.id,
+        url: 'api/projects/' + id,
         type: 'DELETE',
         success: function () {
           ProjectActions.removeSingleProject(project);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          alert(error);
         }
       });
     }
