@@ -63,32 +63,27 @@
         text = "Add Project";
       }
       return (
-        <div>
-          <div className="modal-bg"
-            onClick={this.closeForm} >
+        <form className="project-form modal-fg"
+          onSubmit={callback}>
+          <div>
+            <input className="project-form-input title"
+              ref="titleInput"
+              placeholder="New Project Title"
+              type="text"
+              valueLink={this.linkState("title")}
+            />
           </div>
-          <form className="project-form modal-fg"
-            onSubmit={callback}>
-            <div>
-              <input className="project-form-input title"
-                ref="titleInput"
-                placeholder="New Project Title"
-                type="text"
-                valueLink={this.linkState("title")}
-              />
-            </div>
-            <div>
-              <textarea className="project-form-input detail"
-                rows="5"
-                placeholder="Description"
-                valueLink={this.linkState("description")}
-              />
-            </div>
-            <button className="btn btn-primary pull-right">{text}</button>
-            <button className="btn btn-link"
-              onClick={this.closeForm}>Cancel</button>
-          </form>
-        </div>
+          <div>
+            <textarea className="project-form-input detail"
+              rows="5"
+              placeholder="Description"
+              valueLink={this.linkState("description")}
+            />
+          </div>
+          <button className="btn btn-primary pull-right">{text}</button>
+          <button className="btn btn-link"
+            onClick={this.closeForm}>Cancel</button>
+        </form>
       );
     }
   });

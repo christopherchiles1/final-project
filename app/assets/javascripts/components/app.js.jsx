@@ -10,28 +10,37 @@
       });
     },
 
-    _openModal: function (component, data) {
+    openModal: function (component, data) {
       this.setState({ modalIsOpen: true, component: component, data: data});
     },
 
-    _closeModal: function () {
+    closeModal: function () {
       this.setState({ modalIsOpen: false, component: null, data: null});
     },
 
-    render: function () {
+    renderModal: function () {
       var modal;
       if (this.state.modalIsOpen) {
-        modal = React.createElement(
-          this.state.component,
-          { data: this.state.data, closeModal: this._closeModal }
+        modal = (
+          <Modal closeModal={this.closeModal}>
+            {
+              React.createElement(
+                this.state.component,
+                { data: this.state.data, closeModal: this.closeModal }
+              )
+            }
+          </Modal>
         );
       }
+      return modal;
+    },
 
+    render: function () {
       return (
         <div className="app tall">
-          { modal }
+          { this.renderModal() }
           <Navbar />
-          <Workspace openModal={this._openModal} />
+          <Workspace openModal={this.openModal} />
         </div>
       );
     }
