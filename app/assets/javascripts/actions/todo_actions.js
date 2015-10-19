@@ -2,24 +2,23 @@
   'use strict';
 
   root.TodoActions = {
-    fetchAllTodos: function (task) {
-      TodoUtil.fetchAllTodos(task);
-      // Dispatch an action to change view asynchronously here
+    fetchTaskTodos: function (task) {
+      TodoUtil.fetchTaskTodos(task);
     },
 
-    receiveAllTodos: function (task, todos) {
+    receiveTaskTodos: function (task, todos) {
       AppDispatcher.dispatch({
         actionType: TodoConstants.TODOS_RECEIVED,
+        task: task,
         todos: todos
       });
     },
 
-    fetchSingleTodo: function (todo) {
-      TodoUtil.fetchSingleTodo(todo);
-      // Dispatching here
+    fetchTodo: function (todo) {
+      TodoUtil.fetchTodo(todo);
     },
 
-    receiveSingleTodo: function (todo) {
+    receiveTodo: function (todo) {
       AppDispatcher.dispatch({
         actionType: TodoConstants.TODO_RECEIVED,
         todo: todo
@@ -28,22 +27,17 @@
 
     createTodo: function (todo, callback) {
       TodoUtil.createTodo(todo, callback);
-      // Dispatching here
-      // the api callback can use receiveSingleTodo action
     },
 
     updateTodo: function (todo, callback) {
       TodoUtil.updateTodo(todo, callback);
-      // Dispatching here
-      // api callback can use receiveSingleTodo action
     },
 
     deleteTodo: function (todo, callback) {
       TodoUtil.deleteTodo(todo, callback);
-      // Dispatching here
     },
 
-    removeSingleTodo: function (todo) {
+    removeTodo: function (todo) {
       AppDispatcher.dispatch({
         actionType: TodoConstants.TODO_REMOVED,
         todo: todo

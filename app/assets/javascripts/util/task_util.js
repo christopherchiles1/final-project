@@ -9,7 +9,7 @@
           TaskActions.receiveProjectTasks(project, tasks);
         },
         error: function (error) {
-          alert(error);
+          console.log(error);
         }
       });
     },
@@ -21,7 +21,7 @@
           TaskActions.receiveTask(task);
         },
         error: function (error) {
-          alert(error);
+          console.log(error);
         }
       });
     },
@@ -36,7 +36,7 @@
           if (callback) { callback(); }
         },
         error: function (error) {
-          alert(error);
+          console.log(error);
         }
       });
     },
@@ -51,7 +51,7 @@
           if (callback) { callback(); }
         },
         error: function (error) {
-          alert(error);
+          console.log(error);
         }
       });
     },
@@ -65,7 +65,7 @@
           if (callback) { callback(); }
         },
         error: function (error) {
-          alert(error);
+          console.log(error);
         }
       });
     }

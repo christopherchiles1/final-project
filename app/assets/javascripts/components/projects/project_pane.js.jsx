@@ -34,19 +34,6 @@
     },
 
     render: function () {
-      var taskList;
-      if (this.state.tasks) {
-        taskList = this.state.tasks.map(function (task) {
-          return (
-            <TasksListItem
-              key={task.id}
-              task={task}/>
-           );
-        }.bind(this));
-      } else {
-        taskList = <div className="tasks-list empty"></div>;
-      }
-
       return (
         <div className="project-pane shadowed">
           <div className="project-pane-header group">
@@ -63,9 +50,7 @@
               </button>
             </div>
           </div>
-          <div className="tasks-list">
-            {taskList}
-          </div>
+          <TasksList tasks={this.state.tasks} />
         </div>
       );
     }

@@ -31,7 +31,11 @@
 
   root.TaskStore = $.extend({}, EventEmitter.prototype, {
     projectTasks: function (project) {
-      return _tasks[project.id] && _tasks[project.id].slice();
+      if (_tasks[project.id]) {
+        return _tasks[project.id].slice();
+      } else {
+        return [];
+      }
     },
 
     addTaskChangeListener: function (callback) {

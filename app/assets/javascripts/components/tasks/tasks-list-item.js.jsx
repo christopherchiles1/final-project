@@ -19,8 +19,12 @@
         <div onClick={this._toggleDetail}>
           {
             (this.state.detailed) ?
-            <TaskDetail task={this.props.task} /> :
-            <TaskItem task={this.props.task} />
+            <TaskDetail
+              task={this.props.task}
+              toggleDetail={this._toggleDetail} /> :
+            <TaskItem
+              task={this.props.task}
+              toggleDetail={this._toggleDetail} />
           }
         </div>
       );

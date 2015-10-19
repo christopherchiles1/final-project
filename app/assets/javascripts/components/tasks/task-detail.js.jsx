@@ -10,7 +10,7 @@
 
     componentDidMount: function () {
       TodoStore.addTodoChangeListener(this._onChange);
-      TodoActions.fetchAllTodos(this.props.task);
+      TodoActions.fetchTaskTodos(this.props.task);
     },
 
     componentWillUnmount: function () {
@@ -24,20 +24,20 @@
     },
 
     render: function () {
-      var todoList;
-      if (this.state.todos) {
-        todoList = this.state.todos.map(function (todo) {
-          return <div>{todo.body}</div>;
-        }.bind(this));
-      } else {
-        todoList = <div className="todos-list empty"></div>;
-      }
-
+      // var todoList;
+      // if (this.state.todos) {
+      //   todoList = this.state.todos.map(function (todo) {
+      //     return <div>{todo.body}</div>;
+      //   }.bind(this));
+      // } else {
+      //   todoList = <div className="todos-list empty"></div>;
+      // }
       return (
-        <div className="task-detail">
-          {
-            todoList
-          }
+        <div className="task-detail hover-options">
+          {this.props.task.title}
+          <span className="glyphicon glyphicon-chevron-up pull-right hover-option"
+            aria-hidden="true"
+            onClick={this.props.toggleDetail}></span>
         </div>
       );
     }

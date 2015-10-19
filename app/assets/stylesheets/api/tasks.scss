@@ -1,4 +1,4 @@
-.task-item {
+.tasks-list-item {
   padding: 5px 5px 5px 15px;
   background-color: #555755;
   width: 100%;
@@ -6,7 +6,7 @@
   border-style: outset;
 }
 
-.task-item:hover {
+.tasks-list-item:hover {
   cursor: pointer;
   padding-left: 10px;
 }

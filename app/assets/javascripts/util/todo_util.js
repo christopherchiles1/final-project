@@ -2,20 +2,26 @@
   'use strict';
 
   root.TodoUtil = {
-    fetchAllTodos: function (task) {
+    fetchTaskTodos: function (task) {
       $.ajax({
         url: '/api/tasks/' + task.id + '/todos',
         success: function (todos) {
-          TodoActions.receiveAllTodos(task, todos);
+          TodoActions.receiveTaskTodos(task, todos);
+        },
+        error: function (error) {
+          console.log(error);
         }
       });
     },
 
-    fetchSingleTodo: function (todo) {
+    fetchTodo: function (todo) {
       $.ajax({
         url: '/api/todos/' + todo.id,
         success: function (todo) {
-          TodoActions.receiveSingleTodo(todo);
+          TodoActions.receiveTodo(todo);
+        },
+        error: function (error) {
+          console.log(error);
         }
       });
     },
@@ -26,8 +32,11 @@
         type: 'POST',
         data: { todo: todo },
         success: function (todo) {
-          TodoActions.receiveSingleTodo(todo);
+          TodoActions.receiveTodo(todo);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          console.log(error);
         }
       });
     },
@@ -38,8 +47,11 @@
         type: 'PATCH',
         data: { todo: todo },
         success: function (todo) {
-          TodoActions.receiveSingleTodo(todo);
+          TodoActions.receiveTodo(todo);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          console.log(error);
         }
       });
     },
@@ -49,8 +61,11 @@
         url: 'api/todos/' + todo.id,
         type: 'DELETE',
         success: function () {
-          TodoActions.removeSingleTodo(todo);
+          TodoActions.removeTodo(todo);
           if (callback) { callback(); }
+        },
+        error: function (error) {
+          console.log(error);
         }
       });
     }
