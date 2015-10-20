@@ -9,24 +9,26 @@
     _tasks[project.id] = tasks;
   };
 
-  var _updateTask = function (task) {
-    var updateTask = _tasks[task.project_id].find(function (t) {
-      return t.id === task.id;
-    });
-    if (updateTask) {
-      _tasks[task.project_id].splice(_tasks.indexOf(updateTask), 1, task);
+  var _resetTask = function (task) {
+    var oldTask = find(task);
+    if (oldTask) {
+      _tasks[task.project_id].splice(_tasks.indexOf(oldTask), 1, task);
     } else {
       _tasks[task.project_id].push(task);
     }
   };
 
   var _removeTask = function (task) {
-    var removeTask = _tasks[task.project_id].find(function (t) {
+    var oldTask = find(task);
+    if (oldTask) {
+      _tasks[task.project_id].splice(_tasks[task.project_id].indexOf(oldTask), 1);
+    }
+  };
+
+  var find = function (task) {
+    return _tasks[task.project_id].find(function (t) {
       return t.id === task.id;
     });
-    if (removeTask) {
-      _tasks[task.project_id].splice(_tasks[task.project_id].indexOf(removeTask), 1);
-    }
   };
 
   root.TaskStore = $.extend({}, EventEmitter.prototype, {
@@ -53,7 +55,7 @@
           TaskStore.emit(CHANGE_EVENT);
           break;
         case TaskConstants.TASK_RECEIVED:
-          _updateTask(payload.task);
+          _resetTask(payload.task);
           TaskStore.emit(CHANGE_EVENT);
           break;
         case TaskConstants.TASK_REMOVED:

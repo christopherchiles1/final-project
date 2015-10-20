@@ -2,29 +2,19 @@
   'use strict';
 
   root.ProjectUtil = {
-    fetchUserProjects: function () {
-      $.ajax({
-        url: '/api/projects',
-        success: function (projects) {
-          ProjectActions.receiveUserProjects(projects);
-        },
-        error: function (error) {
-          console.log(error);
-        }
-      });
-    },
-
-    fetchProject: function (project) {
-      $.ajax({
-        url: '/api/projects/' + project.id,
-        success: function (project) {
-          ProjectActions.receiveProject(project);
-        },
-        error: function (error) {
-          console.log(error);
-        }
-      });
-    },
+    // NOTE: fetching a single project is never used.
+    // TODO: Remove single project fetch, project#show, and associated route
+    // fetchProject: function (project) {
+    //   $.ajax({
+    //     url: '/api/projects/' + project.id,
+    //     success: function (project) {
+    //       ProjectActions.receiveProject(project);
+    //     },
+    //     error: function (error) {
+    //       console.log(error);
+    //     }
+    //   });
+    // },
 
     createProject: function (project, callback) {
       $.ajax({
@@ -33,7 +23,19 @@
         data: { project: project },
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
-          if (callback) { callback(); }
+          if (typeof callback === 'function') { callback(); }
+        },
+        error: function (error) {
+          console.log(error);
+        }
+      });
+    },
+
+    fetchUserProjects: function () {
+      $.ajax({
+        url: '/api/projects',
+        success: function (projects) {
+          ProjectActions.receiveUserProjects(projects);
         },
         error: function (error) {
           console.log(error);
@@ -48,7 +50,7 @@
         data: { project: project },
         success: function (project) {
           ProjectActions.receiveSingleProject(project);
-          if (callback) { callback(); }
+          if (typeof callback === 'function') { callback(); }
         },
         error: function (error) {
           console.log(error);
@@ -62,7 +64,7 @@
         type: 'DELETE',
         success: function () {
           ProjectActions.removeSingleProject(project);
-          if (callback) { callback(); }
+          if (typeof callback === 'function') { callback(); }
         },
         error: function (error) {
           console.log(error);

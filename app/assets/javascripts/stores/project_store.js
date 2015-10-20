@@ -9,24 +9,26 @@
     _projects = projects;
   };
 
-  var _updateProject = function (project) {
-    var updateProject = _projects.find(function (p) {
-      return p.id === project.id;
-    });
-    if (updateProject) {
-      _projects.splice(_projects.indexOf(updateProject), 1, project);
+  var _resetProject = function (project) {
+    var oldProject = find(project);
+    if (oldProject) {
+      _projects.splice(_projects.indexOf(oldProject), 1, project);
     } else {
       _projects.push(project);
     }
   };
 
   var _removeProject = function (project) {
-    var removeProject = _projects.find(function (p) {
+    var oldProject = find(project);
+    if (oldProject) {
+      _projects.splice(_projects.indexOf(oldProject), 1);
+    }
+  };
+
+  var find = function (project) {
+    return _projects.find(function (p) {
       return p.id === project.id;
     });
-    if (removeProject) {
-      _projects.splice(_projects.indexOf(removeProject), 1);
-    }
   };
 
   root.ProjectStore = $.extend({}, EventEmitter.prototype, {
@@ -49,7 +51,7 @@
           ProjectStore.emit(CHANGE_EVENT);
           break;
         case ProjectConstants.PROJECT_RECEIVED:
-          _updateProject(payload.project);
+          _resetProject(payload.project);
           ProjectStore.emit(CHANGE_EVENT);
           break;
         case ProjectConstants.PROJECT_REMOVED:

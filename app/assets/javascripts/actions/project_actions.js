@@ -2,30 +2,23 @@
   'use strict';
 
   root.ProjectActions = {
-    fetchUserProjects: function () {
-      ProjectUtil.fetchUserProjects();
-    },
-
-    receiveUserProjects: function (projects) {
-      AppDispatcher.dispatch({
-        actionType: ProjectConstants.PROJECTS_RECEIVED,
-        projects: projects
-      });
-    },
-
-    fetchProject: function (project) {
-      ProjectUtil.fetchProject(project);
-    },
-
-    receiveSingleProject: function (project) {
-      AppDispatcher.dispatch({
-        actionType: ProjectConstants.PROJECT_RECEIVED,
-        project: project
-      });
-    },
+    // fetchProject: function (project) {
+    //   ProjectUtil.fetchProject(project);
+    // },
+    //
+    // receiveProject: function (project) {
+    //   AppDispatcher.dispatch({
+    //     actionType: ProjectConstants.PROJECT_RECEIVED,
+    //     project: project
+    //   });
+    // },
 
     createProject: function (project, callback) {
       ProjectUtil.createProject(project, callback);
+    },
+
+    fetchUserProjects: function () {
+      ProjectUtil.fetchUserProjects();
     },
 
     updateProject: function (project, callback) {
@@ -36,7 +29,14 @@
       ProjectUtil.deleteProject(project, callback);
     },
 
-    removeSingleProject: function (project) {
+    receiveUserProjects: function (projects) {
+      AppDispatcher.dispatch({
+        actionType: ProjectConstants.PROJECTS_RECEIVED,
+        projects: projects
+      });
+    },
+
+    removeProject: function (project) {
       AppDispatcher.dispatch({
         actionType: ProjectConstants.PROJECT_REMOVED,
         project: project
