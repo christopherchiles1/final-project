@@ -1,11 +1,22 @@
 .projects-list-item {
-  padding: 5px 5px 5px 15px;
+  height: 30px;
+  position: relative;
 }
 
 .projects-list-item:hover {
   cursor: pointer;
   background-color: #555755;
+}
+
+.projects-list-item:hover .projects-list-item-title {
   padding-left: 10px;
+}
+
+.projects-list-item-title {
+  float: left;
+  margin: 0;
+  padding: 5px 5px 5px 15px;
+  width: calc(100% - 30px);
 }
 
 .project-pane {
@@ -19,19 +30,14 @@
   position: relative;
   background-color: grey;
   height: 30px;
-  padding: 5px;
 }
 
 .project-pane-header.title {
   float: left;
-  height: 20px;
-  padding: 0;
-  width: calc(100% - 50px);
+  height: 30px;
+  padding: 5px;
+  width: calc(100% - 60px);
   text-align: center;
-}
-
-.project-pane-header.options {
-  float: right;
 }
 
 .project-form {

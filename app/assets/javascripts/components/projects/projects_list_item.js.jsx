@@ -2,8 +2,8 @@
   'use strict';
 
   root.ProjectsListItem = React.createClass({
-    deleteProject: function (e) {
-      this.props.openModal.call(null, ProjectDelete, this.props.project);
+    editProject: function (e) {
+      this.props.openModal.call(null, ProjectModal, this.props.project);
       e.stopPropagation();
     },
 
@@ -16,10 +16,12 @@
       return (
         <div className="projects-list-item truncated hover-options"
           onClick={this.handleTogglePane}>
-          { this.props.project.title }
-          <span className="glyphicon glyphicon-trash pull-right hover-option"
+          <div className="projects-list-item-title">
+            { this.props.project.title }
+          </div>
+          <span className="glyphicon glyphicon-pencil option right hover-option"
             aria-hidden="true"
-            onClick={this.deleteProject}></span>
+            onClick={this.editProject}></span>
         </div>
       );
     }

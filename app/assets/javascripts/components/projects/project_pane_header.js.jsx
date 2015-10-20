@@ -2,9 +2,8 @@
   'use strict';
 
   root.ProjectPaneHeader = React.createClass({
-    editProject: function (e) {
-      e.preventDefault();
-      this.props.openModal.call(null, ProjectModal, this.props.project);
+    addTask: function (e) {
+      // TODO: open a task form at top of project pane
     },
 
     handleTogglePane: function (e) {
@@ -15,14 +14,14 @@
     render: function () {
       return (
         <div className="project-pane-header group">
-          <div className="option-left" onClick={this.handleTogglePane}>
+          <div className="option left" onClick={this.handleTogglePane}>
             <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </div>
           <div className="project-pane-header title truncated">
             {this.props.project.title}
           </div>
-          <div className="option-right" onClick={this.editProject}>
-            <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          <div className="option right" onClick={this.addTask}>
+            <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </div>
         </div>
       );
