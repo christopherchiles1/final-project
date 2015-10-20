@@ -15,9 +15,7 @@
     render: function () {
       return (
         <div className="projects-list-item truncated hover-options"
-          onClick={this.handleTogglePane}
-          onMouseEnter={this.addDeletable}
-          onMouseLeave={this.removeDeletable}>
+          onClick={this.handleTogglePane}>
           { this.props.project.title }
           <span className="glyphicon glyphicon-trash pull-right hover-option"
             aria-hidden="true"

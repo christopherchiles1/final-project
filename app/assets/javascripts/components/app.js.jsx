@@ -26,7 +26,9 @@
             {
               React.createElement(
                 this.state.component,
-                { data: this.state.data, closeModal: this.closeModal }
+                { data: this.state.data,
+                  closeModal: this.closeModal,
+                  openModal: this.openModal }
               )
             }
           </Modal>

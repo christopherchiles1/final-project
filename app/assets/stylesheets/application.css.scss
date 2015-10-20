@@ -31,12 +31,14 @@ html, body, #content {
 }
 
 .option-left {
+  cursor: pointer;
   float: left;
   height: 20px;
   width: 20px;
 }
 
 .option-right {
+  cursor: pointer;
   float: right;
   height: 20px;
   width: 20px;

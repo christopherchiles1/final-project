@@ -45,6 +45,11 @@
       ProjectActions.updateProject(project, callback);
     },
 
+    deleteProject: function (e) {
+      e.preventDefault();
+      this.props.openModal.call(null, ProjectDelete, this.props.data);
+    },
+
     closeForm: function (e) {
       e.preventDefault();
       if (e.currentTarget === e.target) {
@@ -55,9 +60,16 @@
     render: function () {
       var callback;
       var text;
+      var trash;
       if (this.props.data) {
         callback = this._updateProject;
-        text = "Update Project";
+        text = "Update";
+        trash = (
+          <button className="btn btn-danger pull-right"
+            onClick={this.deleteProject}>
+            Delete
+          </button>
+        );
       } else {
         callback = this._createProject;
         text = "Add Project";
@@ -81,6 +93,7 @@
             />
           </div>
           <button className="btn btn-primary pull-right">{text}</button>
+          { trash }
           <button className="btn btn-link"
             onClick={this.closeForm}>Cancel</button>
         </form>
