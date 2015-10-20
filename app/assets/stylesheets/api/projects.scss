@@ -1,3 +1,9 @@
+.projects-list {
+  max-height: 300px;
+  height: calc(100% - 40px;); // TODO: Make this more accurate
+  overflow-y: auto;
+}
+
 .projects-list-item {
   height: 30px;
   position: relative;

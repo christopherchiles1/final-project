@@ -22,7 +22,7 @@
         type: 'POST',
         data: { project: project },
         success: function (project) {
-          ProjectActions.receiveSingleProject(project);
+          ProjectActions.receiveProject(project);
           if (typeof callback === 'function') { callback(); }
         },
         error: function (error) {
@@ -49,7 +49,7 @@
         type: 'PATCH',
         data: { project: project },
         success: function (project) {
-          ProjectActions.receiveSingleProject(project);
+          ProjectActions.receiveProject(project);
           if (typeof callback === 'function') { callback(); }
         },
         error: function (error) {
@@ -63,7 +63,7 @@
         url: 'api/projects/' + project.id,
         type: 'DELETE',
         success: function () {
-          ProjectActions.removeSingleProject(project);
+          ProjectActions.removeProject(project);
           if (typeof callback === 'function') { callback(); }
         },
         error: function (error) {

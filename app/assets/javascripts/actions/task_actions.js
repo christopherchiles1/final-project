@@ -6,13 +6,7 @@
     //   TaskUtil.fetchTask(task);
     // },
     //
-    // receiveTask: function (task) {
-    //   AppDispatcher.dispatch({
-    //     actionType: TaskConstants.TASK_RECEIVED,
-    //     task: task
-    //   });
-    // },
-    
+
     createTask: function (task, callback) {
       TaskUtil.createTask(task, callback);
     },
@@ -34,6 +28,13 @@
         actionType: TaskConstants.TASKS_RECEIVED,
         project: project,
         tasks: tasks
+      });
+    },
+
+    receiveTask: function (task) {
+      AppDispatcher.dispatch({
+        actionType: TaskConstants.TASK_RECEIVED,
+        task: task
       });
     },
 

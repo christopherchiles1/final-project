@@ -6,12 +6,6 @@
     //   ProjectUtil.fetchProject(project);
     // },
     //
-    // receiveProject: function (project) {
-    //   AppDispatcher.dispatch({
-    //     actionType: ProjectConstants.PROJECT_RECEIVED,
-    //     project: project
-    //   });
-    // },
 
     createProject: function (project, callback) {
       ProjectUtil.createProject(project, callback);
@@ -36,6 +30,13 @@
       });
     },
 
+    receiveProject: function (project) {
+      AppDispatcher.dispatch({
+        actionType: ProjectConstants.PROJECT_RECEIVED,
+        project: project
+      });
+    },
+    
     removeProject: function (project) {
       AppDispatcher.dispatch({
         actionType: ProjectConstants.PROJECT_REMOVED,

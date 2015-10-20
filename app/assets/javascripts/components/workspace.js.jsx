@@ -23,7 +23,7 @@
       });
     },
 
-    _togglePane: function (project) {
+    togglePane: function (project) {
       ProjectActions.updateProject({
         id: project.id,
         visible: !project.visible
@@ -41,11 +41,11 @@
         <div className="workspace group">
           <Sidebar
             projects={this.state.projects}
-            togglePane={this._togglePane}
+            togglePane={this.togglePane}
             openModal={this.props.openModal} />
           <PaneArea
             projects={this._visibleProjects()}
-            togglePane={this._togglePane}
+            togglePane={this.togglePane}
             openModal={this.props.openModal} />
         </div>
       );

@@ -11,11 +11,11 @@
     },
 
     openModal: function (component, data) {
-      this.setState({ modalIsOpen: true, component: component, data: data});
+      this.setState({ modalIsOpen: true, component: component, data: data });
     },
 
     closeModal: function () {
-      this.setState({ modalIsOpen: false, component: null, data: null});
+      this.setState({ modalIsOpen: false, component: null, data: null });
     },
 
     renderModal: function () {
