@@ -5,55 +5,34 @@
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
-      var initialState;
       if (this.props.task) {
-        initialState = {
+        return {
           title: this.props.task.title,
           description: this.props.task.description,
           deadline: this.props.task.deadline,
-          todos: TodoStore.taskTodos(this.props.task)
+          todos: this.props.task.todos
         };
       } else {
-        initialState = {
-          title: '', description: '', deadline: '', todos: []
-        };
+        return { title: '', description: '', deadline: '', todos: [] };
       }
-
-      return initialState;
     },
 
     componentDidMount: function () {
-      if (this.props.task) {
-        TodoStore.addTodoChangeListener(this._onChange);
-        TodoActions.fetchTaskTodos(this.props.task);
-      }
       this.refs.titleInput.getDOMNode().focus();
     },
 
-    componentWillUnmount: function () {
-      if (this.props.task) {
-        TodoStore.removeTodoChangeListener(this._onChange);
-      }
-    },
-
-    _onChange: function () {
-      this.setState({
-        tasks: TodoStore.taskTodos(this.props.task)
-      });
-    },
-
     render: function () {
-      // var todoList;
-      // if (this.state.todos) {
-      //   todoList = this.state.todos.map(function (todo) {
-      //     return <div>{todo.body}</div>;
-      //   }.bind(this));
-      // } else {
-      //   todoList = <div className="todos-list empty"></div>;
-      // }
+      var todoList;
+      if (this.state.todos) {
+        todoList = this.state.todos.map(function (todo) {
+          return <div key={todo.id}>{todo.body}</div>;
+        }.bind(this));
+      } else {
+        todoList = <div className="todos-list empty"></div>;
+      }
       return (
         <div className="task-detail">
-          <span className="glyphicon glyphicon-chevron-up pull-right"
+          <span className="glyphicon glyphicon-chevron-up option right"
             aria-hidden="true"
             onClick={this.props.toggleDetail}></span>
           <form>
@@ -76,6 +55,8 @@
               />
             </div>
           </form>
+          <div className="breakline"></div>
+          { todoList }
         </div>
       );
     }

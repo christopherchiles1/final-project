@@ -15,18 +15,14 @@
   padding: 5px;
   background-color: #555755;
   width: 100%;
-  border: 2px solid red;
+  border: 2px solid cornflowerblue;
   border-style: outset;
 }
 
 .task-detail-input {
-  width: 100%;
+  width: calc(100% - 30px);
   background: rgba(0, 0, 0, .2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
-}
-
-.task-detail-input {
-  outline: 0;
 }
 
 .task-detail-input.description {

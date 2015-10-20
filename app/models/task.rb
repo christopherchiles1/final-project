@@ -17,5 +17,7 @@ class Task < ActiveRecord::Base
 
   belongs_to :project
   has_one :user, through: :project
-  has_many :todos, dependent: :destroy
+  has_many :todos, dependent: :destroy, inverse_of: :task
+
+  accepts_nested_attributes_for :todos
 end

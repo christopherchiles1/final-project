@@ -14,8 +14,8 @@ tasks1 = Project.find(1).tasks.create!([
 
 todos1 = Project.first.tasks.first.todos.create!([
   {body: 'Todo 1-1-1', completed: false},
-  {body: 'Todo 1-2-1', completed: true},
-  {body: 'Todo 1-2-2', completed: false}
+  {body: 'Todo 1-1-2', completed: true},
+  {body: 'Todo 1-1-3', completed: false}
 ])
 
 tasks2 = Project.find(2).tasks.create!([

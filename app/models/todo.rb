@@ -14,7 +14,7 @@ class Todo < ActiveRecord::Base
   validates :task, :body, presence: true
   validates :completed, inclusion: [true, false]
 
-  belongs_to :task
+  belongs_to :task, inverse_of: :todos
   has_one :project, through: :task
   has_one :user, through: :task
 end
