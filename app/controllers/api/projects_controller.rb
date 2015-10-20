@@ -3,7 +3,7 @@ class Api::ProjectsController < ApplicationController
     @project = current_user.projects.new(project_params)
     @project.visible = true;
     if @project.save
-      render json: @project
+      render :show
     else
       render json: @project.errors.full_messages, status: 422
     end
@@ -11,18 +11,18 @@ class Api::ProjectsController < ApplicationController
 
   def index
     @projects = current_user.projects
-    render json: @projects
+    render :index
   end
 
   def show
     @project = Project.find(params[:id])
-    render json: @project
+    render :show
   end
 
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
-      render json: @project
+      render :show
     else
       render json: @project.errors.full_messages, status: 422
     end
@@ -31,7 +31,7 @@ class Api::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    render json: @project
+    render :show
   end
 
   private

@@ -1,9 +1,10 @@
 class Api::TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
+    @todos
 
-    if @task.save
-      render json: @task
+    if @task.save && @task.todos.create(task_params[:todos])
+      render :show
     else
       render json: @task.errors.full_messages, status: 422
     end
@@ -11,7 +12,7 @@ class Api::TasksController < ApplicationController
 
   def index
     @tasks = current_user.projects.find(params[:project_id]).tasks
-    render json: @tasks
+    render :index
   end
 
   def show
@@ -21,8 +22,8 @@ class Api::TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    if @task.update(task_params)
-      render json: @task
+    if @task.update(task_params) && @task.todos.update(task_params[:todos])
+      render :show
     else
       render json: @task.errors.full_messages, status: 422
     end
@@ -31,12 +32,12 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    render json: @task
+    render :show
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :deadline)
+    params.require(:task).permit(:title, :description, :deadline, :todos)
   end
 end
