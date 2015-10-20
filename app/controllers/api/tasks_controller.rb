@@ -1,10 +1,9 @@
 class Api::TasksController < ApplicationController
+  before_action :ensure_logged_in
+
   def create
-    @task = current_user.tasks.new(task_params)
-    if current_user.project_ids.include?(params[:project_id])
-      #blow up
-    end
-    @task.project_id = params[:project_id]
+    project = current_user.projects.find(params[:project_id])
+    @task = project.tasks.new(task_params)
 
     if @task.save
       render :show
@@ -19,14 +18,18 @@ class Api::TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     render json: @task
   end
 
   def update
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
 
-    if @task.assign_attributes(task_params)
+    if !todos_owned_by?(@task)
+      raise 'project/task/todo ids did not match current_user'
+    end
+
+    if @task.update(task_params)
       render :show
     else
       render json: @task.errors.full_messages, status: 422
@@ -34,7 +37,7 @@ class Api::TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.destroy
     render :show
   end
@@ -44,16 +47,17 @@ class Api::TasksController < ApplicationController
   def task_params
     params
       .require(:task)
-      .permit(:title, :description, :deadline, todos_attributes: [:body, :completed])
+      .permit(:title, :description, :deadline,
+        todos_attributes: [:id, :body, :completed])
   end
 
-  # def parseTodos(task)
-  #   task_params[:todos].each do |todo|
-  #     if todo.id
-  #       Todo.find(todo.id).update_attributes!(todo)
-  #     else
-  #       task.todos.create!(todo)
-  #     end
-  #   end
-  # end
+  def todos_owned_by?(task)
+    todo_ids = task.todo_ids
+    valid = true
+    task_params[:todos_attributes].each do |_, todo|
+      next unless todo[:id]
+      valid = false unless todo_ids.include?(todo[:id].to_i)
+    end
+    valid
+  end
 end

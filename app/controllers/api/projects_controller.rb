@@ -1,4 +1,6 @@
 class Api::ProjectsController < ApplicationController
+  before_action :ensure_logged_in
+  
   def create
     @project = current_user.projects.new(project_params)
     @project.visible = true;
@@ -15,12 +17,12 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
     render :show
   end
 
   def update
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
     if @project.update(project_params)
       render :show
     else
@@ -29,7 +31,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
     @project.destroy
     render :show
   end
