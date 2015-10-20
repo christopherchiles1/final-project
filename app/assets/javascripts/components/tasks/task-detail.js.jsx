@@ -10,27 +10,30 @@
         initialState = {
           title: this.props.task.title,
           description: this.props.task.description,
-          deadline: this.props.task.deadline
+          deadline: this.props.task.deadline,
+          todos: TodoStore.taskTodos(this.props.task)
         };
       } else {
         initialState = {
-          title: '', description: '', deadline: ''
+          title: '', description: '', deadline: '', todos: []
         };
       }
 
-      return $.extend(initialState, {
-        todos: TodoStore.taskTodos(this.props.task),
-      });
+      return initialState;
     },
 
     componentDidMount: function () {
-      TodoStore.addTodoChangeListener(this._onChange);
-      TodoActions.fetchTaskTodos(this.props.task);
+      if (this.props.task) {
+        TodoStore.addTodoChangeListener(this._onChange);
+        TodoActions.fetchTaskTodos(this.props.task);
+      }
       this.refs.titleInput.getDOMNode().focus();
     },
 
     componentWillUnmount: function () {
-      TodoStore.removeTodoChangeListener(this._onChange);
+      if (this.props.task) {
+        TodoStore.removeTodoChangeListener(this._onChange);
+      }
     },
 
     _onChange: function () {
@@ -62,8 +65,9 @@
                 valueLink={this.linkState("title")}
               />
             </div>
+            <div className="breakline"></div>
             <div>
-              <input className="task-detail-input description"
+              <textarea className="task-detail-input description"
                 rows="5"
                 placeholder="Task Description"
                 type="text"

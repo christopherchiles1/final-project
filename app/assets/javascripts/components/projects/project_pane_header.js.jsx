@@ -3,7 +3,8 @@
 
   root.ProjectPaneHeader = React.createClass({
     addTask: function (e) {
-      // TODO: open a task form at top of project pane
+      e.preventDefault();
+      this.props.openNewTaskForm();
     },
 
     handleTogglePane: function (e) {

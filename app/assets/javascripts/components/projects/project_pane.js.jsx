@@ -4,8 +4,21 @@
   root.ProjectPane = React.createClass({
     getInitialState: function () {
       return {
-        tasks: TaskStore.projectTasks(this.props.project)
+        tasks: TaskStore.projectTasks(this.props.project),
+        newTaskFormIsOpen: false
       };
+    },
+
+    openNewTaskForm: function () {
+      this.setState({
+        newTaskFormIsOpen: true
+      });
+    },
+
+    closeNewTaskForm: function () {
+      this.setState({
+        newTaskFormIsOpen: false
+      });
     },
 
     componentDidMount: function () {
@@ -24,12 +37,20 @@
     },
 
     render: function () {
+      var newTaskForm;
+      if (this.state.newTaskFormIsOpen) {
+        newTaskForm = (
+          <TaskDetail />
+        );
+      }
       return (
         <div className="project-pane shadowed">
           <ProjectPaneHeader
             project={this.props.project}
             togglePane={this.props.togglePane}
-            openModal={this.props.openModal} />
+            openModal={this.props.openModal}
+            openNewTaskForm={this.openNewTaskForm} />
+          { newTaskForm }
           <TasksList tasks={this.state.tasks} />
         </div>
       );

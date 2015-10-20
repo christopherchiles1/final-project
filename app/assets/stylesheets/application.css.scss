@@ -64,6 +64,12 @@ html, body, #content {
   height: 100%;
 }
 
+.breakline {
+  width: 100%;
+  padding: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 // .nopadding {
 //    padding: 0 !important;
 //    margin: 0 !important;
