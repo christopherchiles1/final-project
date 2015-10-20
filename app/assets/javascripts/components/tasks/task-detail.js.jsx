@@ -62,7 +62,8 @@
                 ref="titleInput"
                 placeholder="Task Title"
                 type="text"
-                valueLink={this.linkState("title")}
+                valueLink={this.linkState("title")}cal
+
               />
             </div>
             <div className="breakline"></div>
