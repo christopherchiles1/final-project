@@ -23,6 +23,7 @@
     createTask: function (e) {
       e.preventDefault();
       var task = {
+        project_id: this.props.project.id,
         title: this.state.title,
         description: this.state.description,
         deadline: this.state.deadline,
@@ -51,7 +52,8 @@
     deleteTask: function (e) {
       e.preventDefault();
       var task = {
-        id: this.props.task.id
+        id: this.props.task.id,
+        project_id: this.props.project.id
       };
 
       TaskActions.deleteTask(task);

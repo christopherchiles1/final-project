@@ -10,6 +10,7 @@
               return (
                 <TasksListItem
                   key={task.id}
+                  project={this.props.project}
                   task={task}/>
                );
             }.bind(this))

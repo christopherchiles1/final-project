@@ -27,6 +27,7 @@
             (this.state.detailed) ?
             <TaskDetail
               task={this.props.task}
+              project={this.props.project}
               closeNewTaskForm={this.props.closeNewTaskForm}
               toggleDetail={this._toggleDetail} /> :
             <TaskItem

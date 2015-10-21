@@ -12,7 +12,7 @@
   var _resetTask = function (task) {
     var oldTask = find(task);
     if (oldTask) {
-      _tasks[task.project_id].splice(_tasks.indexOf(oldTask), 1, task);
+      _tasks[task.project_id].splice(_tasks[task.project_id].indexOf(oldTask), 1, task);
     } else {
       _tasks[task.project_id].push(task);
     }
@@ -26,9 +26,13 @@
   };
 
   var find = function (task) {
-    return _tasks[task.project_id].find(function (t) {
-      return t.id === task.id;
+    var oldTask;
+    _tasks[task.project_id].forEach(function (t) {
+      if (t.id === task.id) {
+        oldTask = t;
+      }
     });
+    return oldTask;
   };
 
   root.TaskStore = $.extend({}, EventEmitter.prototype, {

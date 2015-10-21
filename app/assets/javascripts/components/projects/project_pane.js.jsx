@@ -42,6 +42,7 @@
         newTaskForm = (
           <TasksListItem
             form={true}
+            project={this.props.project}
             closeNewTaskForm={this.closeNewTaskForm} />
         );
       }
@@ -53,7 +54,8 @@
             openModal={this.props.openModal}
             openNewTaskForm={this.openNewTaskForm} />
           { newTaskForm }
-          <TasksList tasks={this.state.tasks} />
+          <TasksList tasks={this.state.tasks}
+            project={this.props.project} />
         </div>
       );
     }
