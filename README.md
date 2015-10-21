@@ -59,7 +59,12 @@ a SearchForm and SearchPane component for searching through tasks.
 
 ### Phase 4: Get Todos working and Polish up the project so far (1.5 days)
 
-In Phase 4, I will add todo items under each task so that a task can be broken up into parts. I will build the React views and everything required to be able to add todos to a task, and complete them. At this point, a lot of the functionality of the site should be functional (Adding projects, tasks, and todos, and completing them.) I will spend a little time working with the CSS for my React components, and clean up the user interface.
+In Phase 4, I will add todo items under each task so that a task can be broken
+up into parts. I will build the React views and everything required to be able
+to add todos to a task, and complete them. At this point, a lot of the of the
+site should be functional (Projects, tasks, and todos CRUD). I will spend a
+little time working with the CSS for my React components, and clean up the user
+interface.
 
 [Details][phase-four]
 

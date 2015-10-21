@@ -21,16 +21,14 @@
             <div className="collapse navbar-collapse custom" id="navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right custom">
                 <li className="dropdown custom">
-                  <a href="#"
-                    className="dropdown-toggle"
+                  <a className="dropdown-toggle"
                     data-toggle="dropdown"
                     role="button" aria-haspopup="true" aria-expanded="false">
                     {window.CURRENT_USER_USERNAME}
                     <span className="caret"></span>
                   </a>
                   <ul className="dropdown-menu">
-                    <li><a href="#"
-                      onClick={ApiUtil.logoutUser}>Log out</a></li>
+                    <li><a onClick={ApiUtil.logoutUser}>Log out</a></li>
                   </ul>
                 </li>
               </ul>
