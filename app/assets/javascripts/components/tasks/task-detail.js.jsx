@@ -9,11 +9,10 @@
         return {
           title: this.props.task.title,
           description: this.props.task.description,
-          deadline: this.props.task.deadline,
-          todos: this.props.task.todos
+          deadline: this.props.task.deadline
         };
       } else {
-        return { title: '', description: '', deadline: '', todos: [] };
+        return { title: '', description: '', deadline: '' };
       }
     },
 
@@ -23,8 +22,8 @@
 
     render: function () {
       var todoList;
-      if (this.state.todos) {
-        todoList = this.state.todos.map(function (todo) {
+      if (this.props.task) {
+        todoList = this.props.task.todos.map(function (todo) {
           return <div key={todo.id}>{todo.body}</div>;
         }.bind(this));
       } else {
@@ -32,31 +31,30 @@
       }
       return (
         <div className="task-detail">
-          <span className="glyphicon glyphicon-chevron-up option right"
-            aria-hidden="true"
-            onClick={this.props.toggleDetail}></span>
-          <form>
-            <div>
-              <input className="task-detail-input title"
-                ref="titleInput"
-                placeholder="Task Title"
-                type="text"
-                valueLink={this.linkState("title")}cal
-
-              />
-            </div>
-            <div className="breakline"></div>
-            <div>
-              <textarea className="task-detail-input description"
-                rows="5"
-                placeholder="Task Description"
-                type="text"
-                valueLink={this.linkState("description")}
-              />
-            </div>
-          </form>
+          <div className="task-detail-header">
+            <span className="glyphicon glyphicon-chevron-up option right"
+              aria-hidden="true"
+              onClick={this.props.toggleDetail}></span>
+            <input className="task-detail-input title"
+              ref="titleInput"
+              placeholder="Task Title"
+              type="text"
+              valueLink={this.linkState("title")}
+            />
+          </div>
+          <div className="breakline"></div>
+          <textarea className="task-detail-input description"
+            rows="5"
+            placeholder="Task Description"
+            type="text"
+            valueLink={this.linkState("description")}
+          />
           <div className="breakline"></div>
           { todoList }
+          {/* Buttons */}
+          <button className="btn btn-primary pull-right">Update Task</button>
+          <button className="btn btn-link"
+            onClick={this.toggleDetail}>Cancel</button>
         </div>
       );
     }

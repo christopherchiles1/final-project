@@ -16,7 +16,7 @@
 
     render: function () {
       return (
-        <div onClick={this._toggleDetail}>
+        <div>
           {
             (this.state.detailed) ?
             <TaskDetail
