@@ -39,7 +39,7 @@
 
     render: function () {
       return (
-        <div className="app tall">
+        <div className="app full-height">
           { this.renderModal() }
           <Navbar />
           <Workspace openModal={this.openModal} />

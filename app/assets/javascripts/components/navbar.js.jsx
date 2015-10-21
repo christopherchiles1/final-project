@@ -9,7 +9,7 @@
     render: function () {
       return (
         <nav className="navbar navbar-inverse custom">
-          <div className="container-fluid custom">
+          <div className="container-fullwidth custom">
             <div className="navbar-header">
               <button type="button" className="navbar-toggle collapsed custom"
                 data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">

@@ -4,7 +4,7 @@
   root.PaneArea = React.createClass({
     render: function () {
       return (
-        <div className="pane-area tall">
+        <div className="pane-area full-height">
           {
             this.props.projects.map(function (project) {
               return (
