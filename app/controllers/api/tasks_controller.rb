@@ -52,11 +52,13 @@ class Api::TasksController < ApplicationController
   end
 
   def todos_owned_by?(task)
-    todo_ids = task.todo_ids
     valid = true
-    task_params[:todos_attributes].each do |_, todo|
-      next unless todo[:id]
-      valid = false unless todo_ids.include?(todo[:id].to_i)
+    if task_params[:todos_attributes]
+      todo_ids = task.todo_ids
+      task_params[:todos_attributes].each do |_, todo|
+        next unless todo[:id]
+        valid = false unless todo_ids.include?(todo[:id].to_i)
+      end
     end
     valid
   end

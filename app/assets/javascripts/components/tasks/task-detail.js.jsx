@@ -41,16 +41,25 @@
         title: this.state.title,
         description: this.state.description,
         deadline: this.state.deadline,
-        todos_attributes: [] // Add todos here!!
+        todos_attributes: ['test'] // Add todos here!!
       };
 
       var callback = function () { this.props.toggleDetail(); }.bind(this);
       TaskActions.updateTask(task, callback);
     },
 
-    deleteProject: function (e) {
+    deleteTask: function (e) {
       e.preventDefault();
-      this.props.openModal.call(null, ProjectDelete, this.props.data);
+      var task = {
+        id: this.props.task.id
+      };
+
+      TaskActions.deleteTask(task);
+    },
+
+    toggleDetail: function (e) {
+      e.preventDefault();
+      this.props.toggleDetail();
     },
 
     render: function () {
@@ -64,8 +73,10 @@
       }
       var callback;
       var trash;
+      var text;
       if (this.props.task) {
         callback = this.updateTask;
+        text = "Update";
         trash = (
           <button className="btn btn-danger pull-right"
             onClick={this.deleteTask}>
@@ -74,6 +85,7 @@
         );
       } else {
         callback = this.createTask;
+        text = "New Task";
       }
 
       return (
@@ -81,7 +93,7 @@
           <form className="task-detail-form">
             <span className="glyphicon glyphicon-chevron-up option right"
               aria-hidden="true"
-              onClick={this.props.toggleDetail}></span>
+              onClick={this.toggleDetail}></span>
             <input className="task-detail-input title"
               ref="titleInput"
               placeholder="Task Title"
@@ -98,7 +110,7 @@
             <div className="breakline"></div>
             { todoList }
             <button className="btn btn-primary pull-right"
-              onClick={callback}>Update Task</button>
+              onClick={callback}>{text}</button>
             { trash }
             <button className="btn btn-link"
               onClick={this.toggleDetail}>Cancel</button>

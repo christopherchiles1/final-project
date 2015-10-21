@@ -40,7 +40,9 @@
       var newTaskForm;
       if (this.state.newTaskFormIsOpen) {
         newTaskForm = (
-          <TaskDetail />
+          <TasksListItem
+            form={true}
+            closeNewTaskForm={this.closeNewTaskForm} />
         );
       }
       return (
