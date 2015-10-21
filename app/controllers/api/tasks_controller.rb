@@ -13,12 +13,12 @@ class Api::TasksController < ApplicationController
   end
 
   def index
-    @tasks = current_user.projects.find(params[:project_id]).tasks
+    @tasks = current_user.projects.find(params[:project_id]).tasks.includes(:todos)
     render :index
   end
 
   def show
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.includes(:todos).find(params[:id])
     render json: @task
   end
 
