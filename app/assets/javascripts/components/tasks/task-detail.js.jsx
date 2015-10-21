@@ -20,6 +20,39 @@
       this.refs.titleInput.getDOMNode().focus();
     },
 
+    createTask: function (e) {
+      e.preventDefault();
+      var task = {
+        title: this.state.title,
+        description: this.state.description,
+        deadline: this.state.deadline,
+        todos_attributes: [] // Add todos here!!
+      };
+
+      var callback = function () { this.props.toggleDetail(); }.bind(this);
+
+      TaskActions.createTask(task, callback);
+    },
+
+    updateTask: function (e) {
+      e.preventDefault();
+      var task = {
+        id: this.props.task.id,
+        title: this.state.title,
+        description: this.state.description,
+        deadline: this.state.deadline,
+        todos_attributes: [] // Add todos here!!
+      };
+
+      var callback = function () { this.props.toggleDetail(); }.bind(this);
+      TaskActions.updateTask(task, callback);
+    },
+
+    deleteProject: function (e) {
+      e.preventDefault();
+      this.props.openModal.call(null, ProjectDelete, this.props.data);
+    },
+
     render: function () {
       var todoList;
       if (this.props.task) {
@@ -29,9 +62,23 @@
       } else {
         todoList = <div className="todos-list empty"></div>;
       }
+      var callback;
+      var trash;
+      if (this.props.task) {
+        callback = this.updateTask;
+        trash = (
+          <button className="btn btn-danger pull-right"
+            onClick={this.deleteTask}>
+            Delete
+          </button>
+        );
+      } else {
+        callback = this.createTask;
+      }
+
       return (
         <div className="task-detail">
-          <div className="task-detail-header">
+          <form className="task-detail-form">
             <span className="glyphicon glyphicon-chevron-up option right"
               aria-hidden="true"
               onClick={this.props.toggleDetail}></span>
@@ -41,20 +88,21 @@
               type="text"
               valueLink={this.linkState("title")}
             />
-          </div>
-          <div className="breakline"></div>
-          <textarea className="task-detail-input description"
-            rows="5"
-            placeholder="Task Description"
-            type="text"
-            valueLink={this.linkState("description")}
-          />
-          <div className="breakline"></div>
-          { todoList }
-          {/* Buttons */}
-          <button className="btn btn-primary pull-right">Update Task</button>
-          <button className="btn btn-link"
-            onClick={this.toggleDetail}>Cancel</button>
+            <div className="breakline"></div>
+            <textarea className="task-detail-input description"
+              rows="5"
+              placeholder="Task Description"
+              type="text"
+              valueLink={this.linkState("description")}
+            />
+            <div className="breakline"></div>
+            { todoList }
+            <button className="btn btn-primary pull-right"
+              onClick={callback}>Update Task</button>
+            { trash }
+            <button className="btn btn-link"
+              onClick={this.toggleDetail}>Cancel</button>
+          </form>
         </div>
       );
     }
