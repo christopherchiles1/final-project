@@ -15,7 +15,7 @@
                 data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                 <span className="glyphicon glyphicon-chevron-down"></span>
               </button>
-              <img src="/assets/logo(small).png" />
+              <img src="logo(small).png" />
             </div>
 
             <div className="collapse navbar-collapse custom" id="navbar-collapse-1">
