@@ -29,7 +29,8 @@
                     <span className="caret"></span>
                   </a>
                   <ul className="dropdown-menu">
-                    <li><a href="#">Log out</a></li>
+                    <li><a href="#"
+                      onClick={ApiUtil.logoutUser}>Log out</a></li>
                   </ul>
                 </li>
               </ul>
