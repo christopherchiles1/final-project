@@ -16,7 +16,7 @@
 
             <div className="lt-navbar-left">
               <form className="lt-navbar-form">
-                <div className="lt-form-group group">
+                <div className="lt-search group">
                   <input type="text" placeholder="Search Tasks" />
                   <button type="submit">
                     <span className="glyphicon glyphicon-search"></span>

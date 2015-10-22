@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  root.TaskDetail = React.createClass({
+  root.TaskForm = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {

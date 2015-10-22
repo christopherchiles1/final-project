@@ -1,14 +1,3 @@
-.lt-navbar {
-  width: 100%;
-  height: 100%;
-  padding: 0 10px;
-  background-color: #454751;
-  box-shadow: 0px 1px 5px black;
-  color: lightgrey;
-  font-weight: normal;
-  letter-spacing: .1em;
-}
-
 .nav-container {
   // maintains stacking context for dropdown z-index
   position: relative;
@@ -19,6 +8,15 @@
   width: 100%;
   height: 40px;
   min-width: 500px;
+}
+
+.lt-navbar {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  background-color: #454751;
+  box-shadow: 0px 1px 5px black;
+  color: lightgrey;
 }
 
 .lt-navbar-left {
@@ -40,27 +38,25 @@
   height: 40px;
 }
 
-.lt-form-group {
+.lt-search {
   background: rgba(0, 0, 0, .2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .4)
     inset, 0 1px 0 rgba(255, 255, 255, .2);
   border-radius: 3px;
 }
 
-.lt-form-group input {
+.lt-search input {
   padding: 5px;
   float: left;
   border: 0;
   background: rgba(0, 0, 0, 0);
-  // Searchbar text styling
-
 }
 
-.lt-form-group input:focus {
+.lt-search input:focus {
   outline: 0;
 }
 
-.lt-form-group button {
+.lt-search button {
   float: right;
   height: 100%;
   padding: 5px;
@@ -92,5 +88,3 @@
   color: black;
   z-index: -1;
 }
-// TODO: customize dropdown and dropdown toggle more
-// render dropdown under navbar??

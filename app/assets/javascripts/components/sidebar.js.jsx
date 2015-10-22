@@ -10,10 +10,13 @@
     render: function () {
       return (
         <div className="sidebar full-height shadowed">
-          <button type="button" className="btn btn-primary btn-block"
+          <div className="sidebar-button projects-list-item truncated hover-options"
             onClick={this.newProject}>
-            New Project
-          </button>
+            <div className="projects-list-item-title">
+              {" New Project"}
+            </div>
+            <span className="glyphicon glyphicon-plus option right hover-option"></span>
+          </div>
           <ProjectsList
             projects={this.props.projects}
             togglePane={this.props.togglePane}

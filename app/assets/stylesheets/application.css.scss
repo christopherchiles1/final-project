@@ -17,12 +17,16 @@ html, body, #content {
 .sidebar {
   float: left;
   background-color: #454745;
-  width: 125px;
+  width: 175px;
+}
+
+.sidebar-button {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .pane-area {
   float: right;
-  width: calc(100% - 125px);
+  width: calc(100% - 175px);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
