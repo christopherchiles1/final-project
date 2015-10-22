@@ -10,6 +10,27 @@ html, body, #content {
   height: 100%;
 }
 
+.entry-form {
+  position: fixed;
+  left: 75%;
+  top: 40px;
+  width: 350px;
+  transform: translateX(-50%);
+  background-color: wheat;
+  border: 1px solid cornflowerblue;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.entry-form .btn {
+  margin-top: 5px;
+}
+
+.entry-panel {
+  background: aliceblue;
+}
+
 .workspace {
   background-color: #303236;
   height: calc(100% - 40px);

@@ -1,16 +1,18 @@
-<div class="modal-fg">
-  <h1> Sign Up! </h1>
-  <form action="<%= users_url %>" method="post">
-    <%= auth %>
-    <label>Username</label>
-      <input class="form-control" type="text" name="user[username]" value="<%=@user.username%>">
+<div class="entry-panel full-height">
+  <div class="entry-form modal-fg">
+    <h1> Sign Up! </h1>
+    <form action="<%= users_url %>" method="post">
+      <%= auth %>
+      <label>Username</label>
+        <input class="form-control" type="text" name="user[username]" value="<%=@user.username%>">
 
-    <label>Password</label>
-      <input class="form-control" type="password" name="user[password]" id="Password" value="">
+      <label>Password</label>
+        <input class="form-control" type="password" name="user[password]" id="Password" value="">
 
-      <input class="btn btn-primary pull-right" type="submit" value="Sign up!">
-  </form>
-  <div class="entry-footer">
-    Already awesome? <%= link_to("Log in!", new_session_url)  %>
+        <input class="btn btn-primary pull-right" type="submit" value="Sign up!">
+    </form>
+    <div class="entry-footer">
+      Already awesome? <%= link_to("Log in!", new_session_url)  %>
+    </div>
   </div>
 </div>
