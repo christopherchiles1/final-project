@@ -29,7 +29,7 @@
               <div className="dropdown lt-navbar-dropdown">
                 <div className="dropdown-toggle"
                   data-toggle="dropdown">
-                  {"Profile "}
+                  {"Menu "}
                   <span className="caret"></span>
                 </div>
                 <ul className="dropdown-menu dropdown-menu-right">

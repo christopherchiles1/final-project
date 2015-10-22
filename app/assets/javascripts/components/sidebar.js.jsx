@@ -10,12 +10,13 @@
     render: function () {
       return (
         <div className="sidebar full-height shadowed">
-          <div className="sidebar-button projects-list-item truncated hover-options"
-            onClick={this.newProject}>
-            <div className="projects-list-item-title">
-              {" New Project"}
+          <div className="projects-list-item" onClick={this.newProject}>
+            <div className="icon">
+              <span className="glyphicon glyphicon-plus"></span>
             </div>
-            <span className="glyphicon glyphicon-plus option right hover-option"></span>
+            <div className="projects-list-item-detail">
+              {"New Project"}
+            </div>
           </div>
           <ProjectsList
             projects={this.props.projects}

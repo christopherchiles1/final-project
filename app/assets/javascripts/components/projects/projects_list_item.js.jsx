@@ -16,12 +16,14 @@
       return (
         <div className="projects-list-item truncated hover-options"
           onClick={this.handleTogglePane}>
-          <div className="projects-list-item-title">
+          <div className="icon">
+            <span className="glyphicon glyphicon-pencil hover-option"
+              onClick={this.editProject} />
+          </div>
+          <div className="projects-list-item-detail truncated">
             { this.props.project.title }
           </div>
-          <span className="glyphicon glyphicon-pencil option right hover-option"
-            aria-hidden="true"
-            onClick={this.editProject}></span>
+
         </div>
       );
     }

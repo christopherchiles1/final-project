@@ -12,18 +12,16 @@ html, body, #content {
 }
 
 .workspace {
-  background-color: #303236;
+  background-color: rgb(28, 30, 36);
   height: calc(100% - 40px);
 }
 
 .sidebar {
   float: left;
-  background-color: #454745;
   width: 175px;
-}
-
-.sidebar-button {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  background-color: rgb(48, 50, 56);
+  color: rgb(150, 155, 160);
 }
 
 .pane-area {
@@ -53,6 +51,14 @@ html, body, #content {
 }
 
 // CSS Util classes
+
+div.icon {
+  float: left;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  text-align: center;
+}
 
 .full-height {
   height: 100%;
@@ -85,11 +91,11 @@ html, body, #content {
 }
 
 .hover-option {
-  display: none;
+  opacity: 0;
 }
 
 .hover-options:hover .hover-option {
-  display: block;
+  opacity: 1;
 }
 
 // Scrollbars
