@@ -59,9 +59,9 @@
       TaskActions.deleteTask(task);
     },
 
-    toggleDetail: function (e) {
+    getPreview: function (e) {
       e.preventDefault();
-      this.props.toggleDetail();
+      this.props.getPreview();
     },
 
     render: function () {
@@ -95,7 +95,7 @@
           <form className="task-detail-form">
             <span className="glyphicon glyphicon-chevron-up option right"
               aria-hidden="true"
-              onClick={this.toggleDetail}></span>
+              onClick={this.getPreview}></span>
             <input className="task-detail-input title"
               ref="titleInput"
               placeholder="Task Title"
@@ -115,7 +115,7 @@
               onClick={callback}>{text}</button>
             { trash }
             <button className="btn btn-link"
-              onClick={this.toggleDetail}>Cancel</button>
+              onClick={this.getPreview}>Cancel</button>
           </form>
         </div>
       );

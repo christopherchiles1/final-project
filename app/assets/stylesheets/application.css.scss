@@ -31,6 +31,10 @@ html, body, #content {
   background: aliceblue;
 }
 
+#demo-login {
+  cursor: pointer;
+}
+
 .workspace {
   background-color: #303236;
   height: calc(100% - 40px);
@@ -95,11 +99,6 @@ html, body, #content {
   padding: 2px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-
-// .nopadding {
-//    padding: 0 !important;
-//    margin: 0 !important;
-// }
 
 .shadowed {
   box-shadow: 1px 1px 3px black;
