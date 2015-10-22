@@ -1,70 +1,59 @@
-.navbar.custom {
+.lt-navbar {
+  position: relative;
+  z-index: 9999;
   margin: 0;
-  background-color: #454751;
   border: 0;
   border-radius: 0;
+  padding: 0 10px;
+  width: 100%;
+  height: 40px;
+  min-width: 500px;
+  background-color: #454751;
   box-shadow: 0px 1px 5px black;
-  z-index: 100;
-  min-height: 40px;
-  height: 40px;
-  // Navbar text
-  color: #555761;
-  font-weight: 200;
-  letter-spacing: 0.1em;
 }
 
-.container-fluid.custom {
-  height: 100%;
+.lt-navbar-left {
+  float: left;
 }
 
-.navbar-toggle.custom {
-  height: 36px;
-  margin: 2px;
+.lt-navbar-right {
+  float: right;
 }
 
-.navbar-collapse.custom {
-  max-height: 40px;
+.lt-logo {
+  padding: 2px;
 }
 
-.navbar-nav.custom {
-  height: 40px;
-}
-
-.dropdown.custom {
+.lt-navbar-form {
   margin: 0;
+  border: 0;
+  padding: 5px;
   height: 40px;
-  padding: 0;
 }
 
-.dropdown.custom > a {
-  height: 40px;
-  padding: auto;
-}
-
-.navbar-form.custom {
-  margin: 0;
-  padding: 4px;
-  height: 36px;
-}
-
-.form-group.custom {
+.lt-form-group {
   background: rgba(0, 0, 0, .2);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .4)
+    inset, 0 1px 0 rgba(255, 255, 255, .2);
   border-radius: 3px;
 }
 
-.form-group.custom input {
+.lt-form-group input {
   padding: 5px;
   float: left;
   border: 0;
   background: rgba(0, 0, 0, 0);
+  // Searchbar text styling
+  color: lightgrey;
+  font-weight: lighter;
+  letter-spacing: .1em;
 }
 
-.form-group.custom input:focus {
+.lt-form-group input:focus {
   outline: 0;
 }
 
-.form-group.custom button {
+.lt-form-group button {
   float: right;
   height: 100%;
   padding: 5px;
@@ -73,3 +62,14 @@
   border-radius: 0 3px 3px 0;
   background: rgba(0, 0, 0, 0);
 }
+
+.lt-navbar-dropdown {
+  height: 40px;
+  cursor: pointer;
+}
+
+.lt-navbar-dropdown > div {
+  line-height: 40px;
+}
+
+// TODO: customize dropdown and dropdown toggle more
