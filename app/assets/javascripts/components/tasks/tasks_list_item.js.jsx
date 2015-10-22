@@ -4,7 +4,6 @@
   root.TasksListItem = React.createClass({
     PREVIEW: "PREVIEW",
     DETAIL: "DETAIL",
-    FORM: "FORM",
 
     getInitialState: function () {
       return ({ status: this.PREVIEW });
@@ -22,12 +21,6 @@
       });
     },
 
-    getFrom: function () {
-      this.setState({
-        status: this.FORM
-      });
-    },
-
     render: function () {
       var view;
       switch (this.state.status) {
@@ -42,17 +35,8 @@
           view = (
             <TaskDetail
               task={this.props.task}
-              getPreview={this.getPreview}
-              getForm={this.getForm} />
-          );
-          break;
-        case this.FORM:
-          view = (
-            <TaskForm
-              task={this.props.task}
               project={this.props.project}
-              getPreview={this.getPreview}
-              getForm={this.getForm} />
+              getPreview={this.getPreview} />
           );
           break;
       }
