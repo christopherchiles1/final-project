@@ -30,7 +30,7 @@
         todos_attributes: [] // Add todos here!!
       };
 
-      var callback = function () { this.props.toggleDetail(); }.bind(this);
+      var callback = function () { this.props.getPreview(); }.bind(this);
 
       TaskActions.createTask(task, callback);
     },
@@ -45,7 +45,7 @@
         todos_attributes: ['test'] // Add todos here!!
       };
 
-      var callback = function () { this.props.toggleDetail(); }.bind(this);
+      var callback = function () { this.props.getPreview(); }.bind(this);
       TaskActions.updateTask(task, callback);
     },
 

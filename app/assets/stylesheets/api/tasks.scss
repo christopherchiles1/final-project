@@ -1,3 +1,4 @@
+// Task List Item
 .tasks-list-item {
   width: 100%;
   background-color: rgb(255, 255, 200);
@@ -11,12 +12,13 @@
   background-color: rgb(235, 235, 170);
 }
 
+// Task Detail
 .task-detail {
   padding: 5px;
-  background-color: #555755;
+  background-color: rgb(255, 255, 200);
   width: 100%;
-  border: 2px solid cornflowerblue;
   border-style: outset;
+  border: 1px solid rgb(205, 205, 140);
 }
 
 .task-detail-input {
