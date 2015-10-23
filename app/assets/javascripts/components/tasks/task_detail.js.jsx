@@ -76,10 +76,10 @@
         callback = this.updateTask;
         text = "Update";
         trash = (
-          <button className="btn btn-danger pull-right"
+          <div className="btn btn-default"
             onClick={this.deleteTask}>
-            Delete
-          </button>
+            <span className="glyphicon glyphicon-trash"></span>
+          </div>
         );
       } else {
         callback = this.createTask;
@@ -93,6 +93,13 @@
             type="text"
             valueLink={this.linkState("title")}
           />
+        <div className="btn-group pull-right">
+          { trash }
+          <div className="btn btn-default"
+            onClick={this.getPreview}>cancel</div>
+          <div className="btn btn-default"
+              onClick={callback}>save</div>
+        </div>
           <textarea className="custom-input"
             rows="5"
             placeholder="Task Description"
@@ -103,11 +110,6 @@
               type="date"
               valueLink={this.linkState("deadline")} />
           { todoList }
-          <button className="btn btn-primary pull-right"
-            onClick={callback}>{text}</button>
-          { trash }
-          <button className="btn btn-link"
-            onClick={this.getPreview}>Cancel</button>
         </div>
       );
     }
