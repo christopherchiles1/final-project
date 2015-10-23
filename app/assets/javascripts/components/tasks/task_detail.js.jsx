@@ -9,10 +9,11 @@
         return {
           title: this.props.task.title,
           description: this.props.task.description,
-          deadline: this.props.task.deadline
+          deadline: this.props.task.deadline,
+          todos_attributes: this.props.task.todos
         };
       } else {
-        return { title: '', description: '', deadline: '' };
+        return { title: '', description: '', deadline: '', todos_attributes: [] };
       }
     },
 
@@ -61,20 +62,10 @@
     },
 
     render: function () {
-      var todoList;
-      if (this.props.task) {
-        todoList = this.props.task.todos.map(function (todo) {
-          return <div key={todo.id}>{todo.body}</div>;
-        }.bind(this));
-      } else {
-        todoList = <div className="todos-list empty"></div>;
-      }
       var callback;
       var trash;
-      var text;
       if (this.props.task) {
         callback = this.updateTask;
-        text = "Update";
         trash = (
           <div className="btn btn-default"
             onClick={this.deleteTask}>
@@ -83,23 +74,22 @@
         );
       } else {
         callback = this.createTask;
-        text = "New Task";
       }
 
       return (
         <div className="task-detail">
+          <div className="btn-group pull-right">
+            { trash }
+            <div className="btn btn-default"
+              onClick={this.getPreview}>cancel</div>
+            <div className="btn btn-default"
+              onClick={callback}>save</div>
+          </div>
           <input className="custom-input"
             placeholder="Task Title"
             type="text"
             valueLink={this.linkState("title")}
           />
-        <div className="btn-group pull-right">
-          { trash }
-          <div className="btn btn-default"
-            onClick={this.getPreview}>cancel</div>
-          <div className="btn btn-default"
-              onClick={callback}>save</div>
-        </div>
           <textarea className="custom-input"
             rows="5"
             placeholder="Task Description"
@@ -107,9 +97,11 @@
             valueLink={this.linkState("description")}
           />
           <input className="custom-input"
-              type="date"
-              valueLink={this.linkState("deadline")} />
-          { todoList }
+            type="date"
+            valueLink={this.linkState("deadline")} />
+          <div className="custom-input">
+            <TodosList todos={this.state.todos_attributes} />
+          </div>
         </div>
       );
     }

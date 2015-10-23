@@ -6,13 +6,21 @@
     DETAIL: "DETAIL",
 
     getInitialState: function () {
-      return ({ status: this.PREVIEW });
+      if (this.props.detail) {
+        return ({ status: this.DETAIL });
+      } else {
+        return ({ status: this.PREVIEW });
+      }
     },
 
     getPreview: function () {
-      this.setState({
-        status: this.PREVIEW
-      });
+      if (this.props.detail) {
+        this.props.closeNewTaskForm();
+      } else {
+        this.setState({
+          status: this.PREVIEW
+        });
+      }
     },
 
     getDetail: function () {

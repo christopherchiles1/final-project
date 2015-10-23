@@ -42,7 +42,7 @@
       if (this.state.newTaskFormIsOpen) {
         newTaskForm = (
           <TasksListItem
-            form={true}
+            detail={true}
             project={this.props.project}
             closeNewTaskForm={this.closeNewTaskForm} />
         );

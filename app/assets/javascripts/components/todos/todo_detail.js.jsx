@@ -4,7 +4,9 @@
   root.TodoDetail = React.createClass({
     render: function () {
       return (
-        <div className="todos-detail"></div>
+        <div className="todos-detail">
+          {this.props.todo.body}
+        </div>
       );
     }
   });
