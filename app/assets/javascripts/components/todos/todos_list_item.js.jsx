@@ -28,8 +28,14 @@
       }
     },
 
+    deleteTodo: function (e) {
+      e.preventDefault();
+      // TODO: Add todo deletion logic
+    },
+
     render: function () {
       var icon;
+      var trash;
       var completed = "";
       if (this.props.todo) {
         if (this.state.completed) {
@@ -38,10 +44,14 @@
         } else {
           icon = <span className="glyphicon glyphicon-ok-circle"></span>;
         }
+        trash = <div className="icon input-overlay">
+          <span className="glyphicon glyphicon-trash hover-option"
+            onClick={this.deleteTodo} />
+        </div>;
       }
 
       return (
-        <div className={"todos-list-item group " + completed}>
+        <div className={"todos-list-item group hover-options " + completed}>
           <div className="todo-checkbox" onClick={this.toggleCompleted}>
             { icon }
           </div>
@@ -49,6 +59,7 @@
             valueLink={this.linkState("body")}
             placeholder="add a sub-task"
             onBlur={this.onChange} />
+          { trash }
         </div>
       );
     }

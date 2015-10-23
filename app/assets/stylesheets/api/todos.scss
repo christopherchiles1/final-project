@@ -2,6 +2,7 @@
   height: 30px;
   margin: 5px 0;
   border-radius: 5px;
+  position: relative;
 }
 
 .todo-checkbox {
@@ -26,6 +27,12 @@
   width: calc(100% - 30px);
   border-radius: 0 5px 5px 0;
   padding: 2px 10px;
+}
+
+.input-overlay {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .completed {

@@ -10,7 +10,7 @@
           title: this.props.task.title,
           description: this.props.task.description,
           deadline: this.props.task.deadline,
-          todos_attributes: this.props.task.todos
+          todos_attributes: this.props.task.todos.slice()
         };
       } else {
         return { title: '', description: '', deadline: '', todos_attributes: [] };
