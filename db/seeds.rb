@@ -7,7 +7,7 @@ projects = User.first.projects.create!([
 ])
 
 tasks1 = Project.find(1).tasks.create!([
-  {title: 'Task 1-1', description: 'Project 1 Task 1 (deadlined)', deadline: Date.new},
+  {title: 'Task 1-1', description: 'Project 1 Task 1 (deadlined)', deadline: Time.now},
   {title: 'Task 1-2', description: 'Project 1 Task 2'},
   {title: 'Task 1-3', description: 'Project 1 Task 3'}
 ])
@@ -20,12 +20,12 @@ todos1 = Project.first.tasks.first.todos.create!([
 
 tasks2 = Project.find(2).tasks.create!([
   {title: 'Task 2-1', description: 'Project 2 Task 1'},
-  {title: 'Task 2-2', description: 'Project 2 Task 2 (deadlined)', deadline: Date.new},
+  {title: 'Task 2-2', description: 'Project 2 Task 2 (deadlined)', deadline: Time.now},
   {title: 'Task 2-3', description: 'Project 2 Task 3'}
 ])
 
 tasks3 = Project.find(3).tasks.create!([
-  {title: 'Task 3-1', description: 'Project 3 Task 1 (deadlined)', deadline: Date.new},
-  {title: 'Task 3-2', description: 'Project 3 Task 2 (deadlined)', deadline: Date.new},
+  {title: 'Task 3-1', description: 'Project 3 Task 1 (deadlined)', deadline: Time.now},
+  {title: 'Task 3-2', description: 'Project 3 Task 2 (deadlined)', deadline: Time.now},
   {title: 'Task 3-3', description: 'Project 3 Task 3'}
 ])

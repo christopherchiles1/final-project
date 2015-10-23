@@ -85,6 +85,9 @@
             <div className="btn btn-default"
               onClick={callback}>save</div>
           </div>
+          <input className="custom-input date-input"
+            type="date"
+            valueLink={this.linkState("deadline")} />
           <input className="custom-input"
             placeholder="Task Title"
             type="text"
@@ -96,9 +99,6 @@
             type="text"
             valueLink={this.linkState("description")}
           />
-          <input className="custom-input"
-            type="date"
-            valueLink={this.linkState("deadline")} />
           <div className="custom-input">
             <TodosList todos={this.state.todos_attributes} />
           </div>

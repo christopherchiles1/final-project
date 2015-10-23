@@ -93,6 +93,9 @@ div.icon {
   opacity: 1;
 }
 
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { background: rgba(255, 255, 255, 0.2); }
+
 // Scrollbars
 
 ::-webkit-scrollbar
