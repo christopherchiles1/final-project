@@ -13,8 +13,13 @@
     },
 
     render: function () {
+      var highlighted = "";
+      if (this.props.project.visible) {
+        highlighted = "highlighted";
+      }
+
       return (
-        <div className="projects-list-item truncated hover-options"
+        <div className={"projects-list-item truncated hover-options " + highlighted}
           onClick={this.handleTogglePane}>
           <div className="icon">
             <span className="glyphicon glyphicon-pencil hover-option"
