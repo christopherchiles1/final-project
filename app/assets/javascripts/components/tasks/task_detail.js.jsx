@@ -101,6 +101,7 @@
           />
           <div className="custom-input">
             <TodosList todos={this.state.todos_attributes} />
+            <TodosListItem />
           </div>
         </div>
       );

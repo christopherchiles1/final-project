@@ -2,43 +2,37 @@
   'use strict';
 
   root.TodosListItem = React.createClass({
-    DETAIL: "DETAIL",
-    FORM: "FORM",
+    mixins: [React.addons.LinkedStateMixin],
 
     getInitialState: function () {
-      return ({ status: this.DETAIL });
+      if (this.props.todo) {
+        return { body: this.props.todo.body, completed: this.props.todo.completed };
+      } else {
+        return { body: '', completed: false };
+      }
     },
 
-    getDetail: function () {
-      this.setState({ status: this.DETAIL });
-    },
-
-    getForm: function () {
-      this.setState({ status: this.FORM });
+    toggleCompleted: function (e) {
+      e.preventDefault();
+      this.setState({ completed: !this.state.completed });
     },
 
     render: function () {
-      var view;
-      switch (this.state.status) {
-        case this.FORM:
-          view = (
-            <TodoForm
-              todo={this.props.todo}
-              getDetail={this.getDetail} />
-          );
-          break;
-        case this.DETAIL:
-          view = (
-            <TodoDetail
-              todo={this.props.todo}
-              getPreview={this.getForm} />
-          );
-          break;
+      var icon;
+      if (this.state.completed) {
+        icon = <span className="glyphicon glyphicon-ban-circle"></span>;
+      } else {
+        icon = <span className="glyphicon glyphicon-ok-circle"></span>;
       }
 
       return (
-        <div className="todos-list-item" key={this.props.todo.id}>
-          {view}
+        <div className="todos-detail group">
+          <div className="todo-checkbox" onClick={this.toggleCompleted}>
+            { icon }
+          </div>
+          <input type="text" className="custom-input todo-input"
+            valueLink={this.linkState("body")}
+            placeholder="add a sub-task" />
         </div>
       );
     }
