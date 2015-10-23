@@ -24,7 +24,7 @@
         title: this.state.title,
         description: this.state.description,
         deadline: this.state.deadline,
-        todos_attributes: [] // Add todos here!!
+        todos_attributes: this.state.todos_attributes
       };
 
       var callback = function () { this.props.getPreview(); }.bind(this);
@@ -39,7 +39,7 @@
         title: this.state.title,
         description: this.state.description,
         deadline: this.state.deadline,
-        todos_attributes: ['test'] // Add todos here!!
+        todos_attributes: this.state.todos_attributes
       };
 
       var callback = function () { this.props.getPreview(); }.bind(this);
@@ -59,6 +59,12 @@
     getPreview: function (e) {
       e.preventDefault();
       this.props.getPreview();
+    },
+
+    updateTodos: function (todo) {
+      // receives a todo item with added index field
+      this.state.todos_attributes[todo.idx] = todo;
+      this.setState({todos_attributes: this.state.todos_attributes});
     },
 
     render: function () {
@@ -100,8 +106,8 @@
             valueLink={this.linkState("description")}
           />
           <div className="custom-input">
-            <TodosList todos={this.state.todos_attributes} />
-            <TodosListItem />
+            <TodosList todos={this.state.todos_attributes}
+              updateTodos={this.updateTodos} />
           </div>
         </div>
       );

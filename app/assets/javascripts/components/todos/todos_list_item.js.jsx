@@ -14,7 +14,18 @@
 
     toggleCompleted: function (e) {
       e.preventDefault();
-      this.setState({ completed: !this.state.completed });
+      this.state.completed = !this.state.completed;
+      this.onChange();
+    },
+
+    onChange: function () {
+      if (this.state.body.trim() !== "") {
+        if (this.props.todo) {
+          this.props.updateTodos({ id: this.props.todo.id, idx: this.props.idx, body: this.state.body, completed: this.state.completed });
+        } else {
+          this.props.updateTodos({ idx: this.props.idx, body: this.state.body, completed: this.state.completed });
+        }
+      }
     },
 
     render: function () {
@@ -36,7 +47,8 @@
           </div>
           <input type="text" className="custom-input todo-input"
             valueLink={this.linkState("body")}
-            placeholder="add a sub-task" />
+            placeholder="add a sub-task"
+            onBlur={this.onChange} />
         </div>
       );
     }
