@@ -19,14 +19,18 @@
 
     render: function () {
       var icon;
-      if (this.state.completed) {
-        icon = <span className="glyphicon glyphicon-ban-circle"></span>;
-      } else {
-        icon = <span className="glyphicon glyphicon-ok-circle"></span>;
+      var completed = "";
+      if (this.props.todo) {
+        if (this.state.completed) {
+          icon = <span className="glyphicon glyphicon-ban-circle"></span>;
+          completed="completed";
+        } else {
+          icon = <span className="glyphicon glyphicon-ok-circle"></span>;
+        }
       }
 
       return (
-        <div className="todos-detail group">
+        <div className={"todos-list-item group " + completed}>
           <div className="todo-checkbox" onClick={this.toggleCompleted}>
             { icon }
           </div>
