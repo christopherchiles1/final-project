@@ -14,6 +14,7 @@ html, body, #content {
 .workspace {
   background-color: rgb(28, 30, 36);
   height: calc(100% - 40px);
+  min-width: 500px;
 }
 
 .sidebar {
