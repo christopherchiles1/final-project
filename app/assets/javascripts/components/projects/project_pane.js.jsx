@@ -37,6 +37,7 @@
     },
 
     render: function () {
+      var percent = 100 / this.props.count;
       var newTaskForm;
       if (this.state.newTaskFormIsOpen) {
         newTaskForm = (
@@ -47,15 +48,18 @@
         );
       }
       return (
-        <div className="project-pane shadowed">
+        <div className="project-pane shadowed"
+          style={{ width: "calc(" + percent + "% - 6px)" }}>
           <ProjectPaneHeader
             project={this.props.project}
             togglePane={this.props.togglePane}
             openModal={this.props.openModal}
             openNewTaskForm={this.openNewTaskForm} />
-          { newTaskForm }
-          <TasksList tasks={this.state.tasks}
-            project={this.props.project} />
+          <div className="project-pane-body">
+            { newTaskForm }
+            <TasksList tasks={this.state.tasks}
+              project={this.props.project} />
+          </div>
         </div>
       );
     }

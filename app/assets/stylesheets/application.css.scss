@@ -26,10 +26,10 @@ html, body, #content {
 
 .pane-area {
   float: right;
-  width: calc(100% - 175px);
   display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
+  flex-direction: row;
+  width: calc(100% - 175px);
   padding-right: 2px;
   overflow-x: auto;
 }

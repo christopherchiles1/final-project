@@ -11,6 +11,7 @@
                 <ProjectPane
                   key={ project.id }
                   project={ project }
+                  count={ this.props.projects.length }
                   togglePane={ this.props.togglePane }
                   openModal={ this.props.openModal }/>
                );

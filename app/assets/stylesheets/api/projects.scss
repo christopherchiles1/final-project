@@ -25,9 +25,9 @@
 
 // Project Pane Views
 .project-pane {
+  height: calc(100% - 3px);
   min-width: 200px;
-  flex-grow: 1;
-  background-color: rgb(40, 42, 48);
+  background-color: rgb(38, 40, 46);
   border: 1px solid grey;
   border-radius: 0 0 3px 3px;
   margin: 0 2px 2px 4px;
@@ -45,6 +45,11 @@
   padding: 5px;
   width: calc(100% - 60px);
   text-align: center;
+}
+
+.project-pane-body {
+  height: calc(100% - 30px);
+  overflow-y: auto;
 }
 
 // Project Forms
