@@ -16,10 +16,6 @@
       }
     },
 
-    componentDidMount: function () {
-      this.refs.titleInput.getDOMNode().focus();
-    },
-
     createTask: function (e) {
       e.preventDefault();
       var task = {
@@ -92,31 +88,26 @@
 
       return (
         <div className="task-detail">
-          <form className="task-detail-form">
-            <span className="glyphicon glyphicon-chevron-up option right"
-              aria-hidden="true"
-              onClick={this.getPreview}></span>
-            <input className="task-detail-input title"
-              ref="titleInput"
-              placeholder="Task Title"
-              type="text"
-              valueLink={this.linkState("title")}
-            />
-            <div className="breakline"></div>
-            <textarea className="task-detail-input description"
-              rows="5"
-              placeholder="Task Description"
-              type="text"
-              valueLink={this.linkState("description")}
-            />
-            <div className="breakline"></div>
-            { todoList }
-            <button className="btn btn-primary pull-right"
-              onClick={callback}>{text}</button>
-            { trash }
-            <button className="btn btn-link"
-              onClick={this.getPreview}>Cancel</button>
-          </form>
+          <input className="custom-input"
+            placeholder="Task Title"
+            type="text"
+            valueLink={this.linkState("title")}
+          />
+          <textarea className="custom-input"
+            rows="5"
+            placeholder="Task Description"
+            type="text"
+            valueLink={this.linkState("description")}
+          />
+          <input className="custom-input"
+              type="date"
+              valueLink={this.linkState("deadline")} />
+          { todoList }
+          <button className="btn btn-primary pull-right"
+            onClick={callback}>{text}</button>
+          { trash }
+          <button className="btn btn-link"
+            onClick={this.getPreview}>Cancel</button>
         </div>
       );
     }

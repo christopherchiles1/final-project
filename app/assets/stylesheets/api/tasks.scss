@@ -21,12 +21,26 @@
   border: 1px solid rgb(205, 205, 140);
 }
 
+.custom-input {
+  margin-bottom: 5px;
+  padding: 2px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.custom-input:focus {
+  outline: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+
 .task-detail-input {
   width: calc(100% - 30px);
   background: rgba(0, 0, 0, .2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
 }
 
-.task-detail-input.description {
+textarea {
   resize: none;
 }
