@@ -30,7 +30,7 @@
 
     deleteTodo: function (e) {
       e.preventDefault();
-      // TODO: Add todo deletion logic
+      // TODO: add deletion to todos
     },
 
     render: function () {
@@ -44,10 +44,10 @@
         } else {
           icon = <span className="glyphicon glyphicon-ok-circle"></span>;
         }
-        trash = <div className="icon input-overlay">
-          <span className="glyphicon glyphicon-trash hover-option"
-            onClick={this.deleteTodo} />
-        </div>;
+        // trash = <div className="icon input-overlay">
+        //   <span className="glyphicon glyphicon-trash hover-option"
+        //     onClick={this.deleteTodo} />
+        // </div>;
       }
 
       return (
