@@ -26,9 +26,13 @@
   };
 
   var find = function (project) {
-    return _projects.find(function (p) {
-      return p.id === project.id;
+    var oldProject;
+  _projects.forEach(function (p) {
+      if (p.id === project.id) {
+        oldProject = p;
+      }
     });
+    return oldProject;
   };
 
   root.ProjectStore = $.extend({}, EventEmitter.prototype, {
