@@ -14,17 +14,6 @@
               <img className="lt-logo" src="logo(small).png" />
             </div>
 
-            <div className="lt-navbar-left">
-              <form className="lt-navbar-form">
-                <div className="lt-search group">
-                  <input type="text" placeholder="Search Tasks" />
-                  <button type="submit">
-                    <span className="glyphicon glyphicon-search"></span>
-                  </button>
-                </div>
-              </form>
-            </div>
-
             <div className="lt-navbar-right">
               <div className="dropdown lt-navbar-dropdown">
                 <div className="dropdown-toggle"
@@ -45,3 +34,15 @@
   });
 
 }(this));
+
+// Search Bar (Not Yet Implemented)
+  // <div className="lt-navbar-left">
+  //   <form className="lt-navbar-form">
+  //     <div className="lt-search group">
+  //       <input type="text" placeholder="Search Tasks" />
+  //       <button type="submit">
+  //         <span className="glyphicon glyphicon-search"></span>
+  //       </button>
+  //     </div>
+  //   </form>
+  // </div>
