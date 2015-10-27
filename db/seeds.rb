@@ -18,13 +18,11 @@ demo_user.projects.where({title: 'Relaxation'}).first.tasks.create!([
 ])
 
 demo_user.projects.where({title: 'Education'}).first.tasks.create!([
-  {title: 'Task 3-1', description: 'Project 3 Task 1', deadline: Time.now},
-  {title: 'Task 3-2', description: 'Project 3 Task 2 (deadlined)', deadline: Time.now},
-  {title: 'Task 3-3', description: 'Project 3 Task 3'}
+  {title: 'Learn about Quantum Mechanics', description: ''},
+  {title: 'Read "Effective JavaScript"', description: ''}
 ])
 
-todos1 = Project.first.tasks.first.todos.create!([
-  {body: 'Todo 1-1-1', completed: false},
-  {body: 'Todo 1-1-2', completed: true},
-  {body: 'Todo 1-1-3', completed: false}
+demo_user.projects.where({title: 'Education'}).first.tasks.first.todos.create!([
+  {body: 'Watch PBS Science youtube videos', completed: true},
+  {body: 'Find a good/readable science book on quantum science', completed: false}
 ])

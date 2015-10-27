@@ -2,7 +2,7 @@
 
 [Life Tracker][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://www.life-tracker.io
 
 ## Minimum Viable Product
 
