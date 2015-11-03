@@ -30,13 +30,14 @@
 
 <script type="text/javascript">
   $(function () {
+    var demoID = Math.floor(Math.random() * 900 + 100);
     $("#demo-login").on("click", function () {
-      $("#username").val("demo")
+      $("#username").val("demo" + demoID)
       $("#password").val("password")
       $.ajax({
-        url: "/session",
+        url: "/users",
         type: "POST",
-        data: { user: { username: 'demo', password: 'password'} },
+        data: { user: { username: 'demo' + demoID, password: 'password'} },
         success: function (response) {
           window.location.href = "/";
         }

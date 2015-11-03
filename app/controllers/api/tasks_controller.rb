@@ -26,7 +26,7 @@ class Api::TasksController < ApplicationController
     @task = current_user.tasks.find(params[:id])
 
     if !todos_owned_by?(@task)
-      raise 'project/task/todo ids did not match current_user'
+      raise 'ID mismatch error.'
     end
 
     if @task.update(task_params)

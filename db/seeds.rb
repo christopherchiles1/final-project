@@ -1,3 +1,4 @@
+# NOTE: This seed data will be obselete after randomizing demo users
 demo_user = User.create({username: 'demo', password: 'password' })
 
 demo_user.projects.create!([

@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   helper_method :current_user
@@ -25,5 +23,31 @@ class ApplicationController < ActionController::Base
 
   def ensure_not_logged_in
     redirect_to users_url(current_user) if current_user
+  end
+
+  def seed!(user)
+    user.projects.create!([
+      {title: 'Finances', description: 'pay bills and keep track of money', visible: true},
+      {title: 'Relaxation', description: 'fun things to do!', visible: true},
+      {title: 'Organize dinner party', description: 'On saturday the 10th!', visible: true},
+      {title: 'Education', description: 'Make sure to keep learning new skills', visible: false}
+    ])
+
+    # user.projects.where({title: 'Finances'}).first.tasks.create!([
+    #
+    # ])
+    #
+    # user.projects.where({title: 'Relaxation'}).first.tasks.create!([
+    #
+    # ])
+    #
+    # user.projects.where({title: 'Organize dinner party'}).first.tasks.create!([
+    #
+    # ])
+    #
+    # user.projects.where({title: 'Education'}).first.tasks.create!([
+    #
+    # ])
+
   end
 end
