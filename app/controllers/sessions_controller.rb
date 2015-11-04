@@ -21,7 +21,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout!
-    render json: {}
+    if current_user.username =~ /^demo[0-9]{3}$/
+      destroy_demo!
+      session[:session_token] = nil
+      @user = User.new
+      render :new
+    else
+      logout!
+      render json: {}
+    end
   end
 end

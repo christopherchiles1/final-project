@@ -9,12 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.username =~ /^demo[0-9]{3}$/
-      demo = true
-    end
-
     if @user.save
-      seed!(@user) if demo == true
+      seed!(@user) if @user.username =~ /^demo[0-9]{3}$/
       login!(@user)
       redirect_to root_url
     else

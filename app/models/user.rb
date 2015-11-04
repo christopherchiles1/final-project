@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :projects
+  has_many :projects, dependent: :destroy
   has_many :tasks, through: :projects
   has_many :todos, through: :tasks
 
