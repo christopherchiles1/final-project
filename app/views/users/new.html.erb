@@ -1,11 +1,10 @@
 <div id="entry-content">
   <div class="entry-panel">
-    <div class="entry-group">
-      <%= image_tag "logo(large).png" %>
-      <div class="title">Welcome to Life Tracker</div>
-      <div class="subtitle">A task-management application</div>
+    <div class="entry-box group">
+      <%= image_tag "logo.png", class: "entry-logo"%>
+      <%= image_tag "logo(large).png", class: "entry-img"%>
       <div class="entry-form">
-        <h1> Sign Up! </h1>
+        <h1> Sign Up </h1>
         <form action="<%= users_url %>" method="post">
           <%= auth %>
           <label>Username</label>
@@ -14,12 +13,32 @@
           <label>Password</label>
             <input class="form-control" type="password" name="user[password]" id="Password" value="">
 
-            <input class="btn btn-primary pull-right" type="submit" value="Sign up!">
+            <input class="btn btn-primary pull-right" type="submit" value="Sign Up">
         </form>
-        <div class="entry-footer">
-          Already awesome? <%= link_to("Log in!", new_session_url)  %>
-        </div>
+      </div>
+      <div class="entry-footer">
+        Already awesome? <%= link_to("Log in!", new_session_url)  %>
+        <br>
+        Want to try it out? <a id="demo-login">Log in as Demo</a>
       </div>
     </div>
   </div>
-</div>
+  </div>
+
+  <script type="text/javascript">
+  $(function () {
+    var demoID = Math.floor(Math.random() * 900 + 100);
+    $("#demo-login").on("click", function () {
+      $("#username").val("demo" + demoID)
+      $("#password").val("password")
+      $.ajax({
+        url: "/users",
+        type: "POST",
+        data: { user: { username: 'demo' + demoID, password: 'password'} },
+        success: function (response) {
+          window.location.href = "/";
+        }
+      })
+    });
+  })
+  </script>
