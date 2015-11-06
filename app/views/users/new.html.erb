@@ -8,10 +8,10 @@
         <form action="<%= users_url %>" method="post">
           <%= auth %>
           <label>Username</label>
-            <input class="form-control" type="text" name="user[username]" value="<%=@user.username%>">
+            <input class="form-control" type="text" name="user[username]" id="username" value="<%=@user.username%>">
 
           <label>Password</label>
-            <input class="form-control" type="password" name="user[password]" id="Password" value="">
+            <input class="form-control" type="password" name="user[password]" id="password" value="">
 
             <input class="btn btn-primary pull-right" type="submit" value="Sign Up">
         </form>
